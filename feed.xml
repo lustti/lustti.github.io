@@ -3,8 +3,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>/</id>
   <title>Worklt</title>
-  <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-03-16T13:57:55+08:00</updated>
+  <subtitle>A blog for sharing my lusting technology knowledges.</subtitle>
+  <updated>2025-03-16T14:15:46+08:00</updated>
   <author>
     <name>lustti</name>
     <uri>/</uri>

@@ -3,7 +3,7 @@
 {
   "name": "Worklt",
   "short_name": "Worklt",
-  "description": "A minimal, responsive and feature-rich Jekyll theme for technical writing.",
+  "description": "A blog for sharing my lusting technology knowledges.",
   "icons": [
     {
       "src": "/assets/img/favicons/android-chrome-192x192.png",
