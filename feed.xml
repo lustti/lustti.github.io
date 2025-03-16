@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://localhost:4000/</id>
+  <id>/</id>
   <title>Worklt</title>
-  <subtitle>A blog for sharing lsuting technology knowledge and experiences.</subtitle>
-  <updated>2025-03-16T17:15:03+08:00</updated>
+  <subtitle>A blog for sharing lusting technology knowledge and experiences.</subtitle>
+  <updated>2025-03-16T18:25:17+08:00</updated>
   <author>
     <name>lustti</name>
-    <uri>http://localhost:4000/</uri>
+    <uri>/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="zh-CN"
-    href="http://localhost:4000/"/>
+    href="/"/>
   <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
   <rights> © 2025 lustti </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -21,13 +21,13 @@
   
   <entry>
     <title>C++ 类型转换和类型强制转换</title>
-    <link href="http://localhost:4000/posts/Cpp-Type-Conversion-and-Casting/" rel="alternate" type="text/html" title="C++ 类型转换和类型强制转换" />
+    <link href="/posts/Cpp-Type-Conversion-and-Casting/" rel="alternate" type="text/html" title="C++ 类型转换和类型强制转换" />
     <published>2020-09-01T16:33:00+08:00</published>
   
-    <updated>2020-09-01T16:33:00+08:00</updated>
+    <updated>2025-03-16T17:18:47+08:00</updated>
   
-    <id>http://localhost:4000/posts/Cpp-Type-Conversion-and-Casting/</id>
-    <content type="text/html" src="http://localhost:4000/posts/Cpp-Type-Conversion-and-Casting/" />
+    <id>/posts/Cpp-Type-Conversion-and-Casting/</id>
+    <content type="text/html" src="/posts/Cpp-Type-Conversion-and-Casting/" />
     <author>
       <name>lustti</name>
     </author>
@@ -47,13 +47,13 @@
   
   <entry>
     <title>git 重命名或移动文件和文件夹</title>
-    <link href="http://localhost:4000/posts/git-mv/" rel="alternate" type="text/html" title="git 重命名或移动文件和文件夹" />
+    <link href="/posts/git-mv/" rel="alternate" type="text/html" title="git 重命名或移动文件和文件夹" />
     <published>2020-08-27T11:33:00+08:00</published>
   
-    <updated>2025-03-16T15:52:22+08:00</updated>
+    <updated>2025-03-16T17:18:39+08:00</updated>
   
-    <id>http://localhost:4000/posts/git-mv/</id>
-    <content type="text/html" src="http://localhost:4000/posts/git-mv/" />
+    <id>/posts/git-mv/</id>
+    <content type="text/html" src="/posts/git-mv/" />
     <author>
       <name>lustti</name>
     </author>
@@ -73,13 +73,13 @@
   
   <entry>
     <title>Customize the Favicon</title>
-    <link href="http://localhost:4000/posts/customize-the-favicon/" rel="alternate" type="text/html" title="Customize the Favicon" />
+    <link href="/posts/customize-the-favicon/" rel="alternate" type="text/html" title="Customize the Favicon" />
     <published>2019-08-11T00:34:00+08:00</published>
   
-    <updated>2024-03-02T01:28:45+08:00</updated>
+    <updated>2025-03-16T17:18:25+08:00</updated>
   
-    <id>http://localhost:4000/posts/customize-the-favicon/</id>
-    <content type="text/html" src="http://localhost:4000/posts/customize-the-favicon/" />
+    <id>/posts/customize-the-favicon/</id>
+    <content type="text/html" src="/posts/customize-the-favicon/" />
     <author>
       <name>cotes</name>
     </author>
@@ -97,13 +97,13 @@
   
   <entry>
     <title>Getting Started</title>
-    <link href="http://localhost:4000/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
+    <link href="/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
     <published>2019-08-09T20:55:00+08:00</published>
   
-    <updated>2025-03-16T16:03:09+08:00</updated>
+    <updated>2025-03-16T17:18:25+08:00</updated>
   
-    <id>http://localhost:4000/posts/getting-started/</id>
-    <content type="text/html" src="http://localhost:4000/posts/getting-started/" />
+    <id>/posts/getting-started/</id>
+    <content type="text/html" src="/posts/getting-started/" />
     <author>
       <name>cotes</name>
     </author>
@@ -121,13 +121,13 @@
   
   <entry>
     <title>Writing a New Post</title>
-    <link href="http://localhost:4000/posts/write-a-new-post/" rel="alternate" type="text/html" title="Writing a New Post" />
+    <link href="/posts/write-a-new-post/" rel="alternate" type="text/html" title="Writing a New Post" />
     <published>2019-08-08T14:10:00+08:00</published>
   
-    <updated>2025-03-05T05:06:37+08:00</updated>
+    <updated>2025-03-16T17:18:25+08:00</updated>
   
-    <id>http://localhost:4000/posts/write-a-new-post/</id>
-    <content type="text/html" src="http://localhost:4000/posts/write-a-new-post/" />
+    <id>/posts/write-a-new-post/</id>
+    <content type="text/html" src="/posts/write-a-new-post/" />
     <author>
       <name>cotes</name>
     </author>
