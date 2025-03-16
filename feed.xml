@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Worklt</title>
   <subtitle>A blog for sharing lusting technology knowledge and experiences.</subtitle>
-  <updated>2025-03-16T18:37:50+08:00</updated>
+  <updated>2025-03-16T18:48:37+08:00</updated>
   <author>
     <name>lustti</name>
     <uri>/</uri>
@@ -72,6 +72,32 @@
 
   
   <entry>
+    <title>图解HTTP</title>
+    <link href="/posts/HTTP-Protocol/" rel="alternate" type="text/html" title="图解HTTP" />
+    <published>2019-12-03T13:33:00+08:00</published>
+  
+    <updated>2019-12-03T13:33:00+08:00</updated>
+  
+    <id>/posts/HTTP-Protocol/</id>
+    <content type="text/html" src="/posts/HTTP-Protocol/" />
+    <author>
+      <name>lustti</name>
+    </author>
+
+  
+    
+    <category term="Book" />
+    
+    <category term="http" />
+    
+  
+
+  <summary>172 张图解轻松入门，从基础知识到新动向，一本书掌握HTTP协议。。</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>Customize the Favicon</title>
     <link href="/posts/customize-the-favicon/" rel="alternate" type="text/html" title="Customize the Favicon" />
     <published>2019-08-11T00:34:00+08:00</published>
@@ -115,30 +141,6 @@
   
 
   <summary>Get started with Chirpy basics in this comprehensive overview. You will learn how to install, configure, and use your first Chirpy-based website, as well as deploy it to a web server.</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Writing a New Post</title>
-    <link href="/posts/write-a-new-post/" rel="alternate" type="text/html" title="Writing a New Post" />
-    <published>2019-08-08T14:10:00+08:00</published>
-  
-    <updated>2025-03-16T17:18:25+08:00</updated>
-  
-    <id>/posts/write-a-new-post/</id>
-    <content type="text/html" src="/posts/write-a-new-post/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Tutorial" />
-    
-  
-
-  <summary>This tutorial will guide you how to write a post in the Chirpy template, and it’s worth reading even if you’ve used Jekyll before, as many features require specific variables to be set.  Naming and Path  Create a new file named YYYY-MM-DD-TITLE.EXTENSION and put it in the _posts of the root directory. Please note that the EXTENSION must be one of md and markdown. If you want to save time of cre...</summary>
 
   </entry>
 
