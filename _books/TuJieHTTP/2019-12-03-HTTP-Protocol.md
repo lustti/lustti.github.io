@@ -5,16 +5,16 @@
 
 ## 重点知识思维导图
 ### TCP/IP的分层管理
-![image-center](/assets/imgs/TCP_IP-level.png)
+![image-center](/assets/imgs/books/TuJieHTTP/TCP_IP-level.png)
 
 ### TCP协议的三次握手
-![image-center](/assets/imgs/TCP_three-way_handshaking.png)
+![image-center](/assets/imgs/books/TuJieHTTP/TCP_three-way_handshaking.png)
 
 ### 告知服务器意图的HTTP方法
-![image-center](/assets/imgs/HTTP_method.png)
+![image-center](/assets/imgs/books/TuJieHTTP/HTTP_method.png)
 
 ### HTTP 返回结果状态码
-![image-center](/assets/imgs/HTTP_sate_code.png)
+![image-center](/assets/imgs/books/TuJieHTTP/HTTP_sate_code.png)
 
 ### HTTP+加密+认证+完整性保护=HTTPS
 HTTP的缺点：
@@ -25,7 +25,7 @@ HTTP的缺点：
 HTTPS就是身披SSL(Secure Socket Layer)外壳的HTTP：HTTP <=> ***SSL*** <=> TCP
 
 HTTPS 混合加密机制
-![image-center](/assets/imgs/HTTPS_crypto.png)
+![image-center](/assets/imgs/books/TuJieHTTP/HTTPS_crypto.png)
 
 证明公开密钥正确性的证书：需要权威结构认证，维护费用提高。=> 各种浏览器都会自带捆绑常用的认证机构证书。
 
