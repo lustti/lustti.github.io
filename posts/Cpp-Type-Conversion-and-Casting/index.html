@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh-CN" >
+<html lang="en" >
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
@@ -32,7 +32,7 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="C++ 类型转换和类型强制转换" />
 <meta name="author" content="lustti" />
-<meta property="og:locale" content="zh_CN" />
+<meta property="og:locale" content="en" />
 <meta name="description" content="C++ 类型转换和类型强制转换的介绍和使用方法。" />
 <meta property="og:description" content="C++ 类型转换和类型强制转换的介绍和使用方法。" />
 <link rel="canonical" href="/posts/Cpp-Type-Conversion-and-Casting/" />
@@ -224,7 +224,7 @@
 
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/zh.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -269,7 +269,7 @@
       <li class="nav-item">
         <a href="/" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
-          <span>首页</span>
+          <span>HOME</span>
         </a>
       </li>
       <!-- the real tabs -->
@@ -279,7 +279,7 @@
             <i class="fa-fw fas fa-stream"></i>
             
 
-            <span>分类</span>
+            <span>CATEGORIES</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -289,7 +289,7 @@
             <i class="fa-fw fas fa-tags"></i>
             
 
-            <span>标签</span>
+            <span>TAGS</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -299,7 +299,7 @@
             <i class="fa-fw fas fa-archive"></i>
             
 
-            <span>归档</span>
+            <span>ARCHIVES</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -309,7 +309,7 @@
             <i class="fa-fw fas fa-info-circle"></i>
             
 
-            <span>关于</span>
+            <span>ABOUT</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -433,7 +433,7 @@
         
           
             <span>
-              <a href="/">首页</a>
+              <a href="/">Home</a>
             </span>
 
           
@@ -456,7 +456,7 @@
     </button>
 
     <div id="topbar-title">
-      文章
+      Post
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
@@ -471,10 +471,10 @@
         type="search"
         aria-label="search"
         autocomplete="off"
-        placeholder="搜索..."
+        placeholder="Search..."
       >
     </search>
-    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">取消</button>
+    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">Cancel</button>
   </div>
 </header>
 
@@ -673,7 +673,7 @@
     <div class="post-meta text-muted">
       <!-- published date -->
       <span>
-        发表于
+        Posted
         <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -685,12 +685,12 @@
 <time
   
   data-ts="1598949180"
-  data-df="YYYY/MM/DD"
+  data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2020/09/01
+  Sep  1, 2020
 </time>
 
       </span>
@@ -698,7 +698,7 @@
       <!-- lastmod date -->
       
         <span>
-          更新于
+          Updated
           <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -710,12 +710,12 @@
 <time
   
   data-ts="1742116727"
-  data-df="YYYY/MM/DD"
+  data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2025/03/16
+  Mar 16, 2025
 </time>
 
         </span>
@@ -728,7 +728,7 @@
         <span>
           
 
-          作者
+          By
 
           <em>
             
@@ -765,9 +765,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1393 字"
+  title="1393 words"
 >
-  <em>7 分钟</em>阅读</span>
+  <em>7 min</em> read</span>
 
         </div>
       </div>
@@ -783,7 +783,7 @@
     </div>
 
     <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
-      <span class="label ps-2 pe-1">文章内容</span>
+      <span class="label ps-2 pe-1">Contents</span>
       <i class="fa-solid fa-angle-right fa-fw"></i>
     </button>
 
@@ -811,7 +811,7 @@
 <h2 id="赋值语句的类型转换"><span class="me-2">赋值语句的类型转换</span><a href="#赋值语句的类型转换" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <div class="language-c++ highlighter-rouge"><div class="code-header">
         <span data-label-text="C++"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -875,7 +875,7 @@
 
 <div class="language-c++ highlighter-rouge"><div class="code-header">
         <span data-label-text="C++"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -902,7 +902,7 @@
 
 <div class="language-c++ highlighter-rouge"><div class="code-header">
         <span data-label-text="C++"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -963,7 +963,7 @@
 
 <div class="language-c++ highlighter-rouge"><div class="code-header">
         <span data-label-text="C++"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -977,7 +977,7 @@
 <p>这种类型的转换操纵指针所指向的对象的常量，要么被设置要么被移除。 例如，为了将const指针传递给期望非const参数的函数：</p>
 <div class="language-c++ highlighter-rouge"><div class="code-header">
         <span data-label-text="C++"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1056,18 +1056,18 @@
         
           
 
-          本文由作者按照 
+          This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
-         进行授权
+         by the author.
         
       </div>
 
       <!-- Post sharing snippet -->
 
 <div class="share-wrapper d-flex align-items-center">
-  <span class="share-label text-muted">分享</span>
+  <span class="share-label text-muted">Share</span>
   <span class="share-icons">
     
     
@@ -1102,8 +1102,8 @@
       class="btn small"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
-      title="分享链接"
-      data-title-succeed="链接已复制！"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
     >
       <i class="fa-fw fas fa-link pe-none fs-6"></i>
     </button>
@@ -1139,7 +1139,7 @@
 
 
   <section id="access-lastmod">
-    <h2 class="panel-heading">最近更新</h2>
+    <h2 class="panel-heading">Recently Updated</h2>
     <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
       
         
@@ -1245,7 +1245,7 @@
 
 
   <section>
-    <h2 class="panel-heading">热门标签</h2>
+    <h2 class="panel-heading">Trending Tags</h2>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -1274,7 +1274,7 @@
 
   <div class="toc-border-cover z-3"></div>
   <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
-    <h2 class="panel-heading ps-3 pb-2 mb-0">文章内容</h2>
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
     <nav id="toc"></nav>
   </section>
 
@@ -1339,14 +1339,14 @@
     <a
       href="/posts/git-mv/"
       class="btn btn-outline-primary"
-      aria-label="上一篇"
+      aria-label="Older"
     >
       <p>git 重命名或移动文件和文件夹</p>
     </a>
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="下一篇">
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
       <p>-</p>
     </div>
   
@@ -1374,19 +1374,19 @@
       <span
         data-bs-toggle="tooltip"
         data-bs-placement="top"
-        title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。"
-      >保留部分权利。</span>
+        title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
+      >Some rights reserved.</span>
     
   </p>
 
-  <p>本站采用 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 主题 <a
+  <p>Using the <a
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="v7.2.4"
         href="https://github.com/cotes2020/jekyll-theme-chirpy"
         target="_blank"
         rel="noopener"
-      >Chirpy</a>
+      >Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
   </p>
 </footer>
 
@@ -1461,7 +1461,7 @@
 
 
   <section>
-    <h2 class="panel-heading">热门标签</h2>
+    <h2 class="panel-heading">Trending Tags</h2>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -1512,9 +1512,9 @@
     ></button>
   </div>
   <div class="toast-body text-center pt-0">
-    <p class="px-2 mb-3">发现新版本的内容。</p>
+    <p class="px-2 mb-3">A new version of content is available.</p>
     <button type="button" class="btn btn-primary" aria-label="Update">
-      更新
+      Update
     </button>
   </div>
 </aside>
@@ -1547,7 +1547,7 @@
       resultsContainer: document.getElementById('search-results'),
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{content}</p>  </article>',
-      noResultsText: '<p class="mt-5">搜索结果为空</p>',
+      noResultsText: '<p class="mt-5">Oops! No results found.</p>',
       templateMiddleware: function(prop, value, template) {
         if (prop === 'categories') {
           if (value === '') {
