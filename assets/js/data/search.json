@@ -16,12 +16,12 @@
     "content": "git mv 命令使用简介."
   },
   {
-    "title": "图解HTTP",
+    "title": "《图解HTTP》",
     "url": "/posts/HTTP-Protocol/",
     "categories": "Book, http",
     "tags": "http",
     "date": "2019-12-03 13:33:00 +0800",
-    "content": "172 张图解轻松入门，从基础知识到新动向，一本书掌握HTTP协议。。"
+    "content": "172 张图解轻松入门，从基础知识到新动向，一本书掌握HTTP协议。"
   },
   {
     "title": "Customize the Favicon",
