@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Worklt</title>
   <subtitle>A blog for sharing lusting technology knowledge and experiences.</subtitle>
-  <updated>2025-03-19T17:07:07+08:00</updated>
+  <updated>2025-03-19T18:01:11+08:00</updated>
   <author>
     <name>lustti</name>
     <uri>/</uri>
@@ -102,7 +102,7 @@
     <link href="/posts/centos7-nvidia-cuda/" rel="alternate" type="text/html" title="Centos7 英伟达显卡驱动和CUDA的安装" />
     <published>2020-08-06T11:33:00+08:00</published>
   
-    <updated>2020-08-06T11:33:00+08:00</updated>
+    <updated>2025-03-19T17:07:43+08:00</updated>
   
     <id>/posts/centos7-nvidia-cuda/</id>
     <content type="text/html" src="/posts/centos7-nvidia-cuda/" />
@@ -124,27 +124,27 @@
 
   
   <entry>
-    <title>C++代码规范中文版(QT)</title>
-    <link href="/posts/QT-Google-cpp-style-guide-CN/" rel="alternate" type="text/html" title="C++代码规范中文版(QT)" />
-    <published>2020-08-01T16:33:00+08:00</published>
+    <title>Bug 严重级别定义</title>
+    <link href="/posts/bug-level-definition/" rel="alternate" type="text/html" title="Bug 严重级别定义" />
+    <published>2020-08-06T11:33:00+08:00</published>
   
-    <updated>2025-03-19T16:21:02+08:00</updated>
+    <updated>2025-03-19T18:01:03+08:00</updated>
   
-    <id>/posts/QT-Google-cpp-style-guide-CN/</id>
-    <content type="text/html" src="/posts/QT-Google-cpp-style-guide-CN/" />
+    <id>/posts/bug-level-definition/</id>
+    <content type="text/html" src="/posts/bug-level-definition/" />
     <author>
       <name>lustti</name>
     </author>
 
   
     
-    <category term="Code" />
+    <category term="Project" />
     
-    <category term="C++" />
+    <category term="Development" />
     
   
 
-  <summary>参考谷歌C++代码规范，适用于QT项目的C++代码规范。</summary>
+  <summary>Bug 严重级别定义以及对应的处理方式.</summary>
 
   </entry>
 

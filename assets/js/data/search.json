@@ -32,6 +32,14 @@
     "content": "Centos7 英伟达显卡驱动和CUDA的安装笔记整理汇总."
   },
   {
+    "title": "Bug 严重级别定义",
+    "url": "/posts/bug-level-definition/",
+    "categories": "Project, Development",
+    "tags": "Bug, Development, Style Guide",
+    "date": "2020-08-06 11:33:00 +0800",
+    "content": "Bug 严重级别定义以及对应的处理方式."
+  },
+  {
     "title": "C++代码规范中文版(QT)",
     "url": "/posts/QT-Google-cpp-style-guide-CN/",
     "categories": "Code, C++",

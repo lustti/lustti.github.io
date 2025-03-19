@@ -30,24 +30,26 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Tags" />
+<meta property="og:title" content="Bug 严重级别定义" />
+<meta name="author" content="lustti" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="A blog for sharing lusting technology knowledge and experiences." />
-<meta property="og:description" content="A blog for sharing lusting technology knowledge and experiences." />
-<link rel="canonical" href="/tags/" />
-<meta property="og:url" content="/tags/" />
+<meta name="description" content="Bug 严重级别定义以及对应的处理方式." />
+<meta property="og:description" content="Bug 严重级别定义以及对应的处理方式." />
+<link rel="canonical" href="/posts/bug-level-definition/" />
+<meta property="og:url" content="/posts/bug-level-definition/" />
 <meta property="og:site_name" content="Worklt" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-03-19T18:01:11+08:00" />
+<meta property="article:published_time" content="2020-08-06T11:33:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Tags" />
+<meta property="twitter:title" content="Bug 严重级别定义" />
 <meta name="twitter:site" content="@lustti" />
+<meta name="twitter:creator" content="@lustti" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-03-19T18:01:11+08:00","datePublished":"2025-03-19T18:01:11+08:00","description":"A blog for sharing lusting technology knowledge and experiences.","headline":"Tags","mainEntityOfPage":{"@type":"WebPage","@id":"/tags/"},"url":"/tags/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"lustti","url":"https://github.com/lustti/"},"dateModified":"2025-03-19T18:01:03+08:00","datePublished":"2020-08-06T11:33:00+08:00","description":"Bug 严重级别定义以及对应的处理方式.","headline":"Bug 严重级别定义","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/bug-level-definition/"},"url":"/posts/bug-level-definition/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Tags | Worklt
+  <title>Bug 严重级别定义 | Worklt
   </title>
 
   <!--
@@ -111,9 +113,16 @@
   <!-- 3rd-party Dependencies -->
 
   
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css">
   
 
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+  
+
+  
+    <!-- Image Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
   
 
   <!-- Scripts -->
@@ -129,6 +138,13 @@
 <!-- layout specified -->
 
 
+  
+
+  
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
+
 
 
 
@@ -150,9 +166,65 @@
 
   
 
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -160,11 +232,15 @@
 
 
 
-<script defer src="/assets/js/dist/commons.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
 
 
 <!-- Pageviews -->
+
+  
+
+  
 
 
 
@@ -208,7 +284,7 @@
         </li>
         <!-- .nav-item -->
       
-        <li class="nav-item active">
+        <li class="nav-item">
           <a href="/tags/" class="nav-link">
             <i class="fa-fw fas fa-tags"></i>
             
@@ -363,8 +439,10 @@
           
         
           
+        
+          
             
-              <span>Tags</span>
+              <span>Bug 严重级别定义</span>
             
 
           
@@ -378,7 +456,7 @@
     </button>
 
     <div id="topbar-title">
-      Tags
+      Post
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
@@ -404,96 +482,500 @@
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
+              <!-- Refactor the HTML structure -->
+
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+
+<!-- Handle images -->
+
+
+
+
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+
+
+
+
+
+
+
+
+
+
+<article class="px-1" data-toc="true">
+  <header>
+    <h1 data-toc-skip>Bug 严重级别定义</h1>
+    
+      <p class="post-desc fw-light mb-4">Bug 严重级别定义以及对应的处理方式.</p>
+    
+
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1596684780"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Aug  6, 2020
+</time>
+
+      </span>
+
+      <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1742378463"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Mar 19, 2025
+</time>
+
+        </span>
+      
+
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
               
+                <a href="https://github.com/lustti/">lustti</a>
+                
+              
+            
+          </em>
+        </span>
+
+        <div>
+          <!-- pageviews -->
+          
+
+          <!-- read time -->
+          <!-- Calculate the post's reading time, and display the word count in tooltip -->
 
 
 
-<article class="px-1">
+<!-- words per minute -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="401 words"
+>
+  <em>2 min</em> read</span>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Bug 严重级别定义</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Bug 严重级别定义</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
+
+  <div class="content">
+    <p><a href="/assets/imgs/posts/2020-08-06-bug-level-definition.png" class="popup img-link  shimmer"><img src="/assets/imgs/posts/2020-08-06-bug-level-definition.png" alt="bug level definition" loading="lazy"></a></p>
+
+<h2 id="致命一级bug"><span class="me-2">致命（一级bug）</span><a href="#致命一级bug" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>通常表现为: 主流程无法跑通，系统无法运行，用户数据受到破坏，系统崩溃或严重资源不足，应用模块无法启动或异常退出，主要功能模块无法使用。</p>
+
+<p>比如：</p>
+<ol>
+  <li>内存泄漏；</li>
+  <li>严重的数值计算错误；</li>
+  <li>系统容易崩溃, 服务无法提供；</li>
+  <li>功能设计与需求严重不符；</li>
+  <li>系统无法登陆；</li>
+  <li>循坏报错，无法正常退出。</li>
+</ol>
+
+<h2 id="严重二级bug"><span class="me-2">严重（二级bug）</span><a href="#严重二级bug" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>通常表现为：影响系统功能或操作，主要功能存在严重缺陷，系统分支流程进行不下去，但不会影响到系统稳定性。</p>
+
+<p>比如：</p>
+<ol>
+  <li>功能未实现；</li>
+  <li>功能存在报错；</li>
+  <li>数值轻微的计算错误。</li>
+</ol>
+
+<h2 id="一般三级bug"><span class="me-2">一般（三级bug）</span><a href="#一般三级bug" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>通常表现为：不影响主功能、影响较小的缺陷；或者对系统有一定影响，但触发条件极端，不容易出现的bug。</p>
+
+<p>比如：</p>
+<ol>
+  <li>次要功能未实现，边界条件下错误；</li>
+  <li>容错性不好；</li>
+  <li>大数据下容易无响应；</li>
+  <li>大数据操作时，没有提供进度条。</li>
+</ol>
+
+<h2 id="轻微四级bug"><span class="me-2">轻微（四级bug）</span><a href="#轻微四级bug" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>通常表现为：界面显示、易用性及建议性问题</p>
+
+<p>比如：</p>
+<ol>
+  <li>界面颜色搭配不好；</li>
+  <li>文字排列不整齐；</li>
+  <li>出现错别字，但是不影响功能；</li>
+  <li>界面格式不规范。</li>
+  <li>其他用户体验不好的问题</li>
+</ol>
+
+  </div>
+
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/categories/project/">Project</a>,
+          <a href="/categories/development/">Development</a>
+      </div>
+    
+
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/bug/"
+            class="post-tag no-text-decoration"
+          >Bug</a>
+        
+          <a
+            href="/tags/development/"
+            class="post-tag no-text-decoration"
+          >Development</a>
+        
+          <a
+            href="/tags/style-guide/"
+            class="post-tag no-text-decoration"
+          >Style Guide</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
+
+      <!-- Post sharing snippet -->
+
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
     
     
-    <h1 class="dynamic-title">
-      Tags
-    </h1>
-    <div class="content">
-      <div id="tags" class="d-flex flex-wrap mx-xl-2">
-  
-  
+    
 
-  
+    
 
-  
-    <div>
-      <a class="tag" href="/tags/bug/">
-        Bug<span class="text-muted">1</span>
+      
+
+      <a href="https://twitter.com/intent/tweet?text=Bug%20%E4%B8%A5%E9%87%8D%E7%BA%A7%E5%88%AB%E5%AE%9A%E4%B9%89%20-%20Worklt&url=%2Fposts%2Fbug-level-definition%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
-    </div>
-  
-    <div>
-      <a class="tag" href="/tags/c/">
-        C++<span class="text-muted">2</span>
+    
+
+      
+
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Bug%20%E4%B8%A5%E9%87%8D%E7%BA%A7%E5%88%AB%E5%AE%9A%E4%B9%89%20-%20Worklt&u=%2Fposts%2Fbug-level-definition%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+        <i class="fa-fw fab fa-facebook-square"></i>
       </a>
-    </div>
-  
-    <div>
-      <a class="tag" href="/tags/centos/">
-        Centos<span class="text-muted">5</span>
+    
+
+      
+
+      <a href="https://t.me/share/url?url=%2Fposts%2Fbug-level-definition%2F&text=Bug%20%E4%B8%A5%E9%87%8D%E7%BA%A7%E5%88%AB%E5%AE%9A%E4%B9%89%20-%20Worklt" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+        <i class="fa-fw fab fa-telegram"></i>
       </a>
-    </div>
-  
-    <div>
-      <a class="tag" href="/tags/cuda/">
-        CUDA<span class="text-muted">1</span>
-      </a>
-    </div>
-  
-    <div>
-      <a class="tag" href="/tags/development/">
-        Development<span class="text-muted">1</span>
-      </a>
-    </div>
-  
-    <div>
-      <a class="tag" href="/tags/git/">
-        Git<span class="text-muted">4</span>
-      </a>
-    </div>
-  
-    <div>
-      <a class="tag" href="/tags/http/">
-        HTTP<span class="text-muted">1</span>
-      </a>
-    </div>
-  
-    <div>
-      <a class="tag" href="/tags/linux/">
-        Linux<span class="text-muted">7</span>
-      </a>
-    </div>
-  
-    <div>
-      <a class="tag" href="/tags/python/">
-        Python<span class="text-muted">1</span>
-      </a>
-    </div>
-  
-    <div>
-      <a class="tag" href="/tags/style-guide/">
-        Style Guide<span class="text-muted">4</span>
-      </a>
-    </div>
-  
-    <div>
-      <a class="tag" href="/tags/tutorial/">
-        Tutorial<span class="text-muted">4</span>
-      </a>
-    </div>
-  
+    
+
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
 </div>
 
     </div>
-  
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
 </article>
+
 
             
           </main>
@@ -962,12 +1444,226 @@
             </div>
 
             
+              
+              
+
+
+
+
+
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+            
           </aside>
         </div>
 
         <div class="row">
           <!-- tail -->
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/git-commit/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1598671980"
+  data-df="ll"
+  
+>
+  Aug 29, 2020
+</time>
+
+              <h4 class="pt-0 my-2">Git 提交规范</h4>
+              <div class="text-muted">
+                <p>Git 提交命令使用及 Messages 格式规范.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/QT-Google-cpp-style-guide-CN/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1596270780"
+  data-df="ll"
+  
+>
+  Aug  1, 2020
+</time>
+
+              <h4 class="pt-0 my-2">C++代码规范中文版(QT)</h4>
+              <div class="text-muted">
+                <p>参考谷歌C++代码规范，适用于QT项目的C++代码规范。</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/git-branch/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1595820780"
+  data-df="ll"
+  
+>
+  Jul 27, 2020
+</time>
+
+              <h4 class="pt-0 my-2">Git 分支模型规范</h4>
+              <div class="text-muted">
+                <p>本分支模型主要参考了[ Vincent Driessen 博文 ](https://nvie.com/posts/a-successful-git-branching-model/).</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
+  <!-- #related-posts -->
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/posts/QT-Google-cpp-style-guide-CN/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>C++代码规范中文版(QT)</p>
+    </a>
+  
+
+  
+    <a
+      href="/posts/centos7-nvidia-cuda/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Centos7 英伟达显卡驱动和CUDA的安装</p>
+    </a>
+  
+</nav>
+
             
 
             <!-- The Footer -->
@@ -1458,6 +2154,11 @@
     
 
     <!-- Embedded scripts -->
+
+    
+      
+      <!-- The comments switcher -->
+
 
     
 
