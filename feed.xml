@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Worklt</title>
   <subtitle>A blog for sharing lusting technology knowledge and experiences.</subtitle>
-  <updated>2025-03-18T14:20:21+08:00</updated>
+  <updated>2025-03-19T12:10:32+08:00</updated>
   <author>
     <name>lustti</name>
     <uri>/</uri>
@@ -46,6 +46,32 @@
 
   
   <entry>
+    <title>Git 提交规范</title>
+    <link href="/posts/git-commit/" rel="alternate" type="text/html" title="Git 提交规范" />
+    <published>2020-08-29T11:33:00+08:00</published>
+  
+    <updated>2025-03-19T12:10:03+08:00</updated>
+  
+    <id>/posts/git-commit/</id>
+    <content type="text/html" src="/posts/git-commit/" />
+    <author>
+      <name>lustti</name>
+    </author>
+
+  
+    
+    <category term="Tools" />
+    
+    <category term="Git" />
+    
+  
+
+  <summary>Git 提交命令使用及 Messages 格式规范.</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>git 重命名或移动文件和文件夹</title>
     <link href="/posts/git-mv/" rel="alternate" type="text/html" title="git 重命名或移动文件和文件夹" />
     <published>2020-08-27T11:33:00+08:00</published>
@@ -72,75 +98,53 @@
 
   
   <entry>
-    <title>《图解HTTP》</title>
-    <link href="/posts/HTTP-Protocol/" rel="alternate" type="text/html" title="《图解HTTP》" />
-    <published>2019-12-03T13:33:00+08:00</published>
+    <title>C++代码规范中文版(QT)</title>
+    <link href="/posts/QT-Google-cpp-style-guide-CN/" rel="alternate" type="text/html" title="C++代码规范中文版(QT)" />
+    <published>2020-08-01T16:33:00+08:00</published>
   
-    <updated>2025-03-16T19:00:11+08:00</updated>
+    <updated>2025-03-19T12:06:08+08:00</updated>
   
-    <id>/posts/HTTP-Protocol/</id>
-    <content type="text/html" src="/posts/HTTP-Protocol/" />
+    <id>/posts/QT-Google-cpp-style-guide-CN/</id>
+    <content type="text/html" src="/posts/QT-Google-cpp-style-guide-CN/" />
     <author>
       <name>lustti</name>
     </author>
 
   
     
-    <category term="Book" />
+    <category term="Code" />
     
-    <category term="http" />
+    <category term="C++" />
     
   
 
-  <summary>172 张图解轻松入门，从基础知识到新动向，一本书掌握HTTP协议。</summary>
+  <summary>参考谷歌C++代码规范，适用于QT项目的C++代码规范。</summary>
 
   </entry>
 
   
   <entry>
-    <title>Customize the Favicon</title>
-    <link href="/posts/customize-the-favicon/" rel="alternate" type="text/html" title="Customize the Favicon" />
-    <published>2019-08-11T00:34:00+08:00</published>
+    <title>Git 分支模型规范</title>
+    <link href="/posts/git-branch/" rel="alternate" type="text/html" title="Git 分支模型规范" />
+    <published>2020-07-27T11:33:00+08:00</published>
   
-    <updated>2025-03-16T17:18:25+08:00</updated>
+    <updated>2025-03-19T12:10:15+08:00</updated>
   
-    <id>/posts/customize-the-favicon/</id>
-    <content type="text/html" src="/posts/customize-the-favicon/" />
+    <id>/posts/git-branch/</id>
+    <content type="text/html" src="/posts/git-branch/" />
     <author>
-      <name>cotes</name>
+      <name>lustti</name>
     </author>
 
   
     
-    <category term="Tutorial" />
+    <category term="Tools" />
+    
+    <category term="Git" />
     
   
 
-  <summary>The favicons of Chirpy are placed in the directory assets/img/favicons/. You may want to replace them with your own. The following sections will guide you to create and replace the default favicons.  Generate the favicon  Prepare a square image (PNG, JPG, or SVG) with a size of 512x512 or more, and then go to the online tool Real Favicon Generator and click the button Select your Favicon image ...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Getting Started</title>
-    <link href="/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
-    <published>2019-08-09T20:55:00+08:00</published>
-  
-    <updated>2025-03-16T17:18:25+08:00</updated>
-  
-    <id>/posts/getting-started/</id>
-    <content type="text/html" src="/posts/getting-started/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Tutorial" />
-    
-  
-
-  <summary>Get started with Chirpy basics in this comprehensive overview. You will learn how to install, configure, and use your first Chirpy-based website, as well as deploy it to a web server.</summary>
+  <summary>本分支模型主要参考了[ Vincent Driessen 博文 ](https://nvie.com/posts/a-successful-git-branching-model/).</summary>
 
   </entry>
 
