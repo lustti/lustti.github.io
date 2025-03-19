@@ -8,27 +8,27 @@
 - [Hotfix 分支](#hotfix-分支)
 - [额外分支](#额外分支)
 
-![分支模型](/assets/imgs/posts/2020-07-27-git-branch/git-model@2x.png)
+![分支模型](/assets/imgs/posts/2020-07-27-git-branch/git-model@2x.jpg)
 
 ## 主分支
 中心仓库保有两条拥有永久生命周期的主分支:
-- master
+- main
 - develop
 
-![主分支](/assets/imgs/posts/2020-07-27-git-branch/main-branches@2x.png)
+![主分支](/assets/imgs/posts/2020-07-27-git-branch/main-branches@2x.jpg)
 
 两条主分支并行存在于整个项目周期, 
-- master 分支反映了项目产品稳定版本的变化状态. 
-- develop 分支则是反映了各个 release 版本的开发变化. 所以 develop 分支也称为"整合分支", 与辅助分支交互合并, 记录开发过程. 其中当 develop 分支到达了一个稳定的版本时, 就会合并回 master 分支, 同时打上 release 编码, 也就是对应的内部版本号.
+- main 分支反映了项目产品稳定版本的变化状态. 
+- develop 分支则是反映了各个 release 版本的开发变化. 所以 develop 分支也称为"整合分支", 与辅助分支交互合并, 记录开发过程. 其中当 develop 分支到达了一个稳定的版本时, 就会合并回 main 分支, 同时打上 release 编码, 也就是对应的内部版本号.
 
 ## 辅助分支
 ### feature 分支
 
 - 功能分支一般创建来自于 develop 分支, 
 - 完成开发后必须合并回 develop 分支. 
-- 分支命名除了 master, develop, release-*, 或 hotfix-* 以外都是可以的, 尽量采用与所开发功能对应的英文单词, 尽量不用缩写.
+- 分支命名除了 main, develop, release-*, 或 hotfix-* 以外都是可以的, 尽量采用与所开发功能对应的英文单词, 尽量不用缩写.
 
-![功能分支](/assets/imgs/posts/2020-07-27-git-branch/feature-branches@2x.png)
+![功能分支](/assets/imgs/posts/2020-07-27-git-branch/feature-branches@2x.jpg)
 
 从 develop 分支创建功能分支:
 ```
@@ -48,12 +48,12 @@ Deleted branch myfeature (was 05e9557).
 $ git push origin develop
 ```
 > PS: 功能分支内的历史一般不合并到develop分支中, 所以基本都要带上 `--no-ff` flag 来省去, 具体功能见下图.<br>
-![no-ff-merge](/assets/imgs/posts/2020-07-27-git-branch/merge-without-ff@2x.png)
+![no-ff-merge](/assets/imgs/posts/2020-07-27-git-branch/merge-without-ff@2x.jpg)
 
 ### Release 分支
 
 - 功能分支一般创建来自于 develop 分支, 
-- 合并回 develop 和 master 分支. 
+- 合并回 develop 和 main 分支. 
 - 分支命名采用 release-*, * 为对应的 release 编码, 也就是内部版本号.
 
 ![release 分支](/assets/imgs/posts/2020-07-27-git-branch/release-branches@2x.jpg)
@@ -71,10 +71,10 @@ $ git commit -a -m "Bumped version number to 1.2"
 > PS: 这里的 bump-version.sh 是修改对应版本信息文件的脚本.
 
 
-合并到 master 分支, 并打上版本信息 tag :
+合并到 main 分支, 并打上版本信息 tag :
 ```
-$ git checkout master
-Switched to branch 'master'
+$ git checkout main
+Switched to branch 'main'
 $ git merge --no-ff release-1.2
 Merge made by recursive.
 (Summary of changes)
@@ -99,15 +99,15 @@ Deleted branch release-1.2 (was ff452fe).
 ## Hotfix 分支
 
 hotfix 分支用于修复上线产品比较严重的bug.
-- hotfix 分支一般创建来自于 master 分支, 
-- 合并回 develop 和 master 分支. 
+- hotfix 分支一般创建来自于 main 分支, 
+- 合并回 develop 和 main 分支. 
 - 分支命名采用 hotfix-*, * 为对应的内部版本号.
 
-![hotfix 分支](/assets/imgs/posts/2020-07-27-git-branch/hotfix-branches@2x.png)
+![hotfix 分支](/assets/imgs/posts/2020-07-27-git-branch/hotfix-branches@2x.jpg)
 
-从 master 分支创建 hotfix 分支:
+从 main 分支创建 hotfix 分支:
 ```
-$ git checkout -b hotfix-1.2.1 master
+$ git checkout -b hotfix-1.2.1 main
 Switched to a new branch "hotfix-1.2.1"
 $ ./bump-version.sh 1.2.1
 Files modified successfully, version bumped to 1.2.1.
@@ -123,10 +123,10 @@ $ git commit -m "Fixed severe production problem"
 5 files changed, 32 insertions(+), 17 deletions(-)
 ```
 
-合并到 master 分支, 并打上版本信息 tag :
+合并到 main 分支, 并打上版本信息 tag :
 ```
-$ git checkout master
-Switched to branch 'master'
+$ git checkout main
+Switched to branch 'main'
 $ git merge --no-ff hotfix-1.2.1
 Merge made by recursive.
 (Summary of changes)
