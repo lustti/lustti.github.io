@@ -24,12 +24,12 @@
     "content": "git mv 命令使用简介."
   },
   {
-    "title": "Centos7 Nvidia Cuda",
+    "title": "Centos7 英伟达显卡驱动和CUDA的安装",
     "url": "/posts/centos7-nvidia-cuda/",
-    "categories": "",
-    "tags": "",
-    "date": "2020-08-06 00:00:00 +0800",
-    "content": "Centos7 英伟达显卡驱动和CUDA的安装    显卡： GeForce GTX 1050   kernel-release: 3.10.0-1127.el7.x86_64   驱动：Linux x64 (AMD64/EM64T) Display Driver Version 440.100.   CUDA: Version 10.2   Results: +--------------..."
+    "categories": "Linux, Centos",
+    "tags": "Linux, Centos, CUDA",
+    "date": "2020-08-06 11:33:00 +0800",
+    "content": "Centos7 英伟达显卡驱动和CUDA的安装笔记整理汇总."
   },
   {
     "title": "C++代码规范中文版(QT)",

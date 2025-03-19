@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Worklt</title>
   <subtitle>A blog for sharing lusting technology knowledge and experiences.</subtitle>
-  <updated>2025-03-19T16:48:24+08:00</updated>
+  <updated>2025-03-19T17:07:07+08:00</updated>
   <author>
     <name>lustti</name>
     <uri>/</uri>
@@ -98,11 +98,11 @@
 
   
   <entry>
-    <title>Centos7 Nvidia Cuda</title>
-    <link href="/posts/centos7-nvidia-cuda/" rel="alternate" type="text/html" title="Centos7 Nvidia Cuda" />
-    <published>2020-08-06T00:00:00+08:00</published>
+    <title>Centos7 英伟达显卡驱动和CUDA的安装</title>
+    <link href="/posts/centos7-nvidia-cuda/" rel="alternate" type="text/html" title="Centos7 英伟达显卡驱动和CUDA的安装" />
+    <published>2020-08-06T11:33:00+08:00</published>
   
-    <updated>2020-08-06T00:00:00+08:00</updated>
+    <updated>2020-08-06T11:33:00+08:00</updated>
   
     <id>/posts/centos7-nvidia-cuda/</id>
     <content type="text/html" src="/posts/centos7-nvidia-cuda/" />
@@ -112,9 +112,13 @@
 
   
     
+    <category term="Linux" />
+    
+    <category term="Centos" />
+    
   
 
-  <summary>Centos7 英伟达显卡驱动和CUDA的安装    显卡： GeForce GTX 1050   kernel-release: 3.10.0-1127.el7.x86_64   驱动：Linux x64 (AMD64/EM64T) Display Driver Version 440.100.   CUDA: Version 10.2   Results: +-----------------------------------------------------------------------------+ | NVIDIA-SMI 440.100      Driver Version: 440.100      CUDA Version: 10.2     | |-------------------------------+----------------------...</summary>
+  <summary>Centos7 英伟达显卡驱动和CUDA的安装笔记整理汇总.</summary>
 
   </entry>
 

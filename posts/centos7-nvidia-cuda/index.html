@@ -30,24 +30,26 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Centos7 Nvidia Cuda" />
+<meta property="og:title" content="Centos7 英伟达显卡驱动和CUDA的安装" />
+<meta name="author" content="lustti" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Centos7 英伟达显卡驱动和CUDA的安装 显卡： GeForce GTX 1050 kernel-release: 3.10.0-1127.el7.x86_64 驱动：Linux x64 (AMD64/EM64T) Display Driver Version 440.100. CUDA: Version 10.2 Results: 1 2 3 4 5 6 7 8 9 +-----------------------------------------------------------------------------+ | NVIDIA-SMI 440.100 Driver Version: 440.100 CUDA Version: 10.2 | |-------------------------------+----------------------+----------------------+ | GPU Name Persistence-M| Bus-Id Disp.A | Volatile Uncorr. ECC | | Fan Temp Perf Pwr:Usage/Cap| Memory-Usage | GPU-Util Compute M. | |===============================+======================+======================| | 0 GeForce GTX 1050 Off | 00000000:01:00.0 Off | N/A | | N/A 44C P8 N/A / N/A | 0MiB / 2002MiB | 0% Default | +-------------------------------+----------------------+----------------------+ 前期准备 安装依赖 要装的三个依赖分别是，gcc、kernel-devel、dkms，其中需要注意的是，kernel-devel的版本需要与当前内核的版本一致，不然后面会出现找不到文件的情况。 查看我的内核版本： 1 2 $ sudo uname -r 3.10.0-1127.el7.x86_64 查看一下可以安装的版本： [root@host8 ~]# yum list | grep kernel-devel kernel-devel.x86_64 3.10.0-957.1.3.el7 updates 安装rpm包后，继续安装其他依赖： yum -y install gcc dkms 查询驱动版本 首先导入公共密钥 $ sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org 安装ELRepo 具体点击详情 1 $ sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm 安装 nvidia-detect $ sudo yum install nvidia-detect 运行 nvidia-detect 1 2 3 4 5 6 $ sudo nvidia-detect -v Probing for supported NVIDIA devices... [10de:1c8d] NVIDIA Corporation GP107M [GeForce GTX 1050 Mobile] This device requires the current 440.64 NVIDIA driver kmod-nvidia [8086:591b] Intel Corporation HD Graphics 630 An Intel display controller was also detected 根据 nvidia-detect 的输出信息，可以知道显卡的型号，以及要使用的驱动版本 440.64。到官网下载最接近的驱动版本，这里下载 Version 440.100. PS：通过命令 $ sudo yum search kmod-nvidia 可以查找源中有的驱动，但是还是官网下载好一点，至少安装包都有。 安装驱动 refer to INSTALLING NVIDIA DRIVERS ON RHEL OR CENTOS 7 Most users of NVIDIA graphics cards prefer to use the drivers provided by NVIDIA. These more fully support the capabilities of the card when compared to the nouveau driver that is included with the distribution. These are the steps to install the NVIDIA driver and disable the nouveau driver. Prepare your machine 1 2 3 yum -y update yum -y groupinstall &quot;GNOME Desktop&quot; &quot;Development Tools&quot; yum -y install kernel-devel Download the latest NVIDIA driver for unix. ==&gt; http://www.nvidia.com/object/unix.html ==&gt; Latest Long Lived Branch version Note: If using a recently released, top end GTX or Tesla you may get more support with the Latest Short Lived Branch instead. In order to have the NVIDIA drivers rebuilt automatically with future kernel updates you can also install the EPEL repository and the DKMS package. This is optional. 1 2 yum -y install epel-release yum -y install dkms Reboot your machine to make sure you are running the newest kernel Edit /etc/default/grub. Append the following to “GRUB_CMDLINE_LINUX” rd.driver.blacklist=nouveau nouveau.modeset=0 Generate a new grub configuration to include the above changes. grub2-mkconfig -o /boot/grub2/grub.cfg Edit/create /etc/modprobe.d/blacklist.conf and append: blacklist nouveau Backup your old initramfs and then build a new one 1 2 mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img dracut /boot/initramfs-$(uname -r).img $(uname -r) Reboot your machine If your machine doesn’t boot to a login prompt disconnect your monitor from the graphics card and plug directly into the onboard VGA port. Alternatively SSH directly into the machine. The NVIDIA installer will not run while X is running so switch to text mode: systemctl isolate multi-user.target Run the NVIDIA driver installer and enter yes to all options. sh NVIDIA-Linux-x86_64-*.run Reboot your machine Solve can’t launch `nvidia-setting’ for X server. 1 2 $ nvidia-setting ERROR: Unable to load info from any available system Solution: Create /etc/X11/xorg.conf.d/11-nvidia.conf with contents 1 2 3 4 5 6 7 Section &quot;OutputClass&quot; Identifier &quot;nvidia&quot; MatchDriver &quot;nvidia-drm&quot; Driver &quot;nvidia&quot; Option &quot;AllowEmptyInitialConfiguration&quot; &quot;true&quot; Option &quot;PrimaryGPU&quot; &quot;true&quot; EndSection and for GDM/Gnome, create two files optimus.desktop in /etc/xdg/autostart/ and /usr/share/gdm/greeter/autostart/ containing 1 2 3 4 5 6 [Desktop Entry] Type=Application Name=Optimus Exec=sh -c &quot;xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto&quot; NoDisplay=true X-GNOME-Autostart-Phase=DisplayServer CUDA 安装 Download the latest CUDA Toolkit (runfile installer option, not the rpm download) ==&gt; https://developer.nvidia.com/cuda-downloads ==&gt; Linux ==&gt; x86_64 ==&gt; RHEL/CentOS ==&gt; 7 ==&gt; runfile (local) Run the CUDA installer. sh cuda_*.run Say no to installing the NVIDIA driver. The standalone driver you already installed is typically newer than what is packaged with CUDA. Use the default option for all other choices. To add CUDA to your environment add the following files. Create /etc/profile.d/cuda.sh 1 2 PATH=$PATH:/usr/local/cuda/bin export PATH Create /etc/profile.d/cuda.csh 1 set path = ( $path /usr/local/cuda/bin ) Create /etc/ld.so.conf.d/cuda.conf 1 /usr/local/cuda/lib64 cudnn 安装 到官网下载对应安装包，然后按以下顺序安装： runtime library: $ sudo rpm -i libcudnn7-7.6.5.33-1.cuda10.2.x86_64.rpm develop library: $ sudo rpm -i libcudnn7-devel-7.6.5.33-1.cuda10.2.x86_64.rpm doc and code samples: $ sudo rpm -i libcudnn7-doc-7.6.5.33-1.cuda10.2.x86_64.rpm" />
-<meta property="og:description" content="Centos7 英伟达显卡驱动和CUDA的安装 显卡： GeForce GTX 1050 kernel-release: 3.10.0-1127.el7.x86_64 驱动：Linux x64 (AMD64/EM64T) Display Driver Version 440.100. CUDA: Version 10.2 Results: 1 2 3 4 5 6 7 8 9 +-----------------------------------------------------------------------------+ | NVIDIA-SMI 440.100 Driver Version: 440.100 CUDA Version: 10.2 | |-------------------------------+----------------------+----------------------+ | GPU Name Persistence-M| Bus-Id Disp.A | Volatile Uncorr. ECC | | Fan Temp Perf Pwr:Usage/Cap| Memory-Usage | GPU-Util Compute M. | |===============================+======================+======================| | 0 GeForce GTX 1050 Off | 00000000:01:00.0 Off | N/A | | N/A 44C P8 N/A / N/A | 0MiB / 2002MiB | 0% Default | +-------------------------------+----------------------+----------------------+ 前期准备 安装依赖 要装的三个依赖分别是，gcc、kernel-devel、dkms，其中需要注意的是，kernel-devel的版本需要与当前内核的版本一致，不然后面会出现找不到文件的情况。 查看我的内核版本： 1 2 $ sudo uname -r 3.10.0-1127.el7.x86_64 查看一下可以安装的版本： [root@host8 ~]# yum list | grep kernel-devel kernel-devel.x86_64 3.10.0-957.1.3.el7 updates 安装rpm包后，继续安装其他依赖： yum -y install gcc dkms 查询驱动版本 首先导入公共密钥 $ sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org 安装ELRepo 具体点击详情 1 $ sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm 安装 nvidia-detect $ sudo yum install nvidia-detect 运行 nvidia-detect 1 2 3 4 5 6 $ sudo nvidia-detect -v Probing for supported NVIDIA devices... [10de:1c8d] NVIDIA Corporation GP107M [GeForce GTX 1050 Mobile] This device requires the current 440.64 NVIDIA driver kmod-nvidia [8086:591b] Intel Corporation HD Graphics 630 An Intel display controller was also detected 根据 nvidia-detect 的输出信息，可以知道显卡的型号，以及要使用的驱动版本 440.64。到官网下载最接近的驱动版本，这里下载 Version 440.100. PS：通过命令 $ sudo yum search kmod-nvidia 可以查找源中有的驱动，但是还是官网下载好一点，至少安装包都有。 安装驱动 refer to INSTALLING NVIDIA DRIVERS ON RHEL OR CENTOS 7 Most users of NVIDIA graphics cards prefer to use the drivers provided by NVIDIA. These more fully support the capabilities of the card when compared to the nouveau driver that is included with the distribution. These are the steps to install the NVIDIA driver and disable the nouveau driver. Prepare your machine 1 2 3 yum -y update yum -y groupinstall &quot;GNOME Desktop&quot; &quot;Development Tools&quot; yum -y install kernel-devel Download the latest NVIDIA driver for unix. ==&gt; http://www.nvidia.com/object/unix.html ==&gt; Latest Long Lived Branch version Note: If using a recently released, top end GTX or Tesla you may get more support with the Latest Short Lived Branch instead. In order to have the NVIDIA drivers rebuilt automatically with future kernel updates you can also install the EPEL repository and the DKMS package. This is optional. 1 2 yum -y install epel-release yum -y install dkms Reboot your machine to make sure you are running the newest kernel Edit /etc/default/grub. Append the following to “GRUB_CMDLINE_LINUX” rd.driver.blacklist=nouveau nouveau.modeset=0 Generate a new grub configuration to include the above changes. grub2-mkconfig -o /boot/grub2/grub.cfg Edit/create /etc/modprobe.d/blacklist.conf and append: blacklist nouveau Backup your old initramfs and then build a new one 1 2 mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img dracut /boot/initramfs-$(uname -r).img $(uname -r) Reboot your machine If your machine doesn’t boot to a login prompt disconnect your monitor from the graphics card and plug directly into the onboard VGA port. Alternatively SSH directly into the machine. The NVIDIA installer will not run while X is running so switch to text mode: systemctl isolate multi-user.target Run the NVIDIA driver installer and enter yes to all options. sh NVIDIA-Linux-x86_64-*.run Reboot your machine Solve can’t launch `nvidia-setting’ for X server. 1 2 $ nvidia-setting ERROR: Unable to load info from any available system Solution: Create /etc/X11/xorg.conf.d/11-nvidia.conf with contents 1 2 3 4 5 6 7 Section &quot;OutputClass&quot; Identifier &quot;nvidia&quot; MatchDriver &quot;nvidia-drm&quot; Driver &quot;nvidia&quot; Option &quot;AllowEmptyInitialConfiguration&quot; &quot;true&quot; Option &quot;PrimaryGPU&quot; &quot;true&quot; EndSection and for GDM/Gnome, create two files optimus.desktop in /etc/xdg/autostart/ and /usr/share/gdm/greeter/autostart/ containing 1 2 3 4 5 6 [Desktop Entry] Type=Application Name=Optimus Exec=sh -c &quot;xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto&quot; NoDisplay=true X-GNOME-Autostart-Phase=DisplayServer CUDA 安装 Download the latest CUDA Toolkit (runfile installer option, not the rpm download) ==&gt; https://developer.nvidia.com/cuda-downloads ==&gt; Linux ==&gt; x86_64 ==&gt; RHEL/CentOS ==&gt; 7 ==&gt; runfile (local) Run the CUDA installer. sh cuda_*.run Say no to installing the NVIDIA driver. The standalone driver you already installed is typically newer than what is packaged with CUDA. Use the default option for all other choices. To add CUDA to your environment add the following files. Create /etc/profile.d/cuda.sh 1 2 PATH=$PATH:/usr/local/cuda/bin export PATH Create /etc/profile.d/cuda.csh 1 set path = ( $path /usr/local/cuda/bin ) Create /etc/ld.so.conf.d/cuda.conf 1 /usr/local/cuda/lib64 cudnn 安装 到官网下载对应安装包，然后按以下顺序安装： runtime library: $ sudo rpm -i libcudnn7-7.6.5.33-1.cuda10.2.x86_64.rpm develop library: $ sudo rpm -i libcudnn7-devel-7.6.5.33-1.cuda10.2.x86_64.rpm doc and code samples: $ sudo rpm -i libcudnn7-doc-7.6.5.33-1.cuda10.2.x86_64.rpm" />
+<meta name="description" content="Centos7 英伟达显卡驱动和CUDA的安装笔记整理汇总." />
+<meta property="og:description" content="Centos7 英伟达显卡驱动和CUDA的安装笔记整理汇总." />
 <link rel="canonical" href="/posts/centos7-nvidia-cuda/" />
 <meta property="og:url" content="/posts/centos7-nvidia-cuda/" />
 <meta property="og:site_name" content="Worklt" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-08-06T00:00:00+08:00" />
+<meta property="article:published_time" content="2020-08-06T11:33:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Centos7 Nvidia Cuda" />
+<meta property="twitter:title" content="Centos7 英伟达显卡驱动和CUDA的安装" />
 <meta name="twitter:site" content="@lustti" />
+<meta name="twitter:creator" content="@lustti" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-08-06T00:00:00+08:00","datePublished":"2020-08-06T00:00:00+08:00","description":"Centos7 英伟达显卡驱动和CUDA的安装 显卡： GeForce GTX 1050 kernel-release: 3.10.0-1127.el7.x86_64 驱动：Linux x64 (AMD64/EM64T) Display Driver Version 440.100. CUDA: Version 10.2 Results: 1 2 3 4 5 6 7 8 9 +-----------------------------------------------------------------------------+ | NVIDIA-SMI 440.100 Driver Version: 440.100 CUDA Version: 10.2 | |-------------------------------+----------------------+----------------------+ | GPU Name Persistence-M| Bus-Id Disp.A | Volatile Uncorr. ECC | | Fan Temp Perf Pwr:Usage/Cap| Memory-Usage | GPU-Util Compute M. | |===============================+======================+======================| | 0 GeForce GTX 1050 Off | 00000000:01:00.0 Off | N/A | | N/A 44C P8 N/A / N/A | 0MiB / 2002MiB | 0% Default | +-------------------------------+----------------------+----------------------+ 前期准备 安装依赖 要装的三个依赖分别是，gcc、kernel-devel、dkms，其中需要注意的是，kernel-devel的版本需要与当前内核的版本一致，不然后面会出现找不到文件的情况。 查看我的内核版本： 1 2 $ sudo uname -r 3.10.0-1127.el7.x86_64 查看一下可以安装的版本： [root@host8 ~]# yum list | grep kernel-devel kernel-devel.x86_64 3.10.0-957.1.3.el7 updates 安装rpm包后，继续安装其他依赖： yum -y install gcc dkms 查询驱动版本 首先导入公共密钥 $ sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org 安装ELRepo 具体点击详情 1 $ sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm 安装 nvidia-detect $ sudo yum install nvidia-detect 运行 nvidia-detect 1 2 3 4 5 6 $ sudo nvidia-detect -v Probing for supported NVIDIA devices... [10de:1c8d] NVIDIA Corporation GP107M [GeForce GTX 1050 Mobile] This device requires the current 440.64 NVIDIA driver kmod-nvidia [8086:591b] Intel Corporation HD Graphics 630 An Intel display controller was also detected 根据 nvidia-detect 的输出信息，可以知道显卡的型号，以及要使用的驱动版本 440.64。到官网下载最接近的驱动版本，这里下载 Version 440.100. PS：通过命令 $ sudo yum search kmod-nvidia 可以查找源中有的驱动，但是还是官网下载好一点，至少安装包都有。 安装驱动 refer to INSTALLING NVIDIA DRIVERS ON RHEL OR CENTOS 7 Most users of NVIDIA graphics cards prefer to use the drivers provided by NVIDIA. These more fully support the capabilities of the card when compared to the nouveau driver that is included with the distribution. These are the steps to install the NVIDIA driver and disable the nouveau driver. Prepare your machine 1 2 3 yum -y update yum -y groupinstall &quot;GNOME Desktop&quot; &quot;Development Tools&quot; yum -y install kernel-devel Download the latest NVIDIA driver for unix. ==&gt; http://www.nvidia.com/object/unix.html ==&gt; Latest Long Lived Branch version Note: If using a recently released, top end GTX or Tesla you may get more support with the Latest Short Lived Branch instead. In order to have the NVIDIA drivers rebuilt automatically with future kernel updates you can also install the EPEL repository and the DKMS package. This is optional. 1 2 yum -y install epel-release yum -y install dkms Reboot your machine to make sure you are running the newest kernel Edit /etc/default/grub. Append the following to “GRUB_CMDLINE_LINUX” rd.driver.blacklist=nouveau nouveau.modeset=0 Generate a new grub configuration to include the above changes. grub2-mkconfig -o /boot/grub2/grub.cfg Edit/create /etc/modprobe.d/blacklist.conf and append: blacklist nouveau Backup your old initramfs and then build a new one 1 2 mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img dracut /boot/initramfs-$(uname -r).img $(uname -r) Reboot your machine If your machine doesn’t boot to a login prompt disconnect your monitor from the graphics card and plug directly into the onboard VGA port. Alternatively SSH directly into the machine. The NVIDIA installer will not run while X is running so switch to text mode: systemctl isolate multi-user.target Run the NVIDIA driver installer and enter yes to all options. sh NVIDIA-Linux-x86_64-*.run Reboot your machine Solve can’t launch `nvidia-setting’ for X server. 1 2 $ nvidia-setting ERROR: Unable to load info from any available system Solution: Create /etc/X11/xorg.conf.d/11-nvidia.conf with contents 1 2 3 4 5 6 7 Section &quot;OutputClass&quot; Identifier &quot;nvidia&quot; MatchDriver &quot;nvidia-drm&quot; Driver &quot;nvidia&quot; Option &quot;AllowEmptyInitialConfiguration&quot; &quot;true&quot; Option &quot;PrimaryGPU&quot; &quot;true&quot; EndSection and for GDM/Gnome, create two files optimus.desktop in /etc/xdg/autostart/ and /usr/share/gdm/greeter/autostart/ containing 1 2 3 4 5 6 [Desktop Entry] Type=Application Name=Optimus Exec=sh -c &quot;xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto&quot; NoDisplay=true X-GNOME-Autostart-Phase=DisplayServer CUDA 安装 Download the latest CUDA Toolkit (runfile installer option, not the rpm download) ==&gt; https://developer.nvidia.com/cuda-downloads ==&gt; Linux ==&gt; x86_64 ==&gt; RHEL/CentOS ==&gt; 7 ==&gt; runfile (local) Run the CUDA installer. sh cuda_*.run Say no to installing the NVIDIA driver. The standalone driver you already installed is typically newer than what is packaged with CUDA. Use the default option for all other choices. To add CUDA to your environment add the following files. Create /etc/profile.d/cuda.sh 1 2 PATH=$PATH:/usr/local/cuda/bin export PATH Create /etc/profile.d/cuda.csh 1 set path = ( $path /usr/local/cuda/bin ) Create /etc/ld.so.conf.d/cuda.conf 1 /usr/local/cuda/lib64 cudnn 安装 到官网下载对应安装包，然后按以下顺序安装： runtime library: $ sudo rpm -i libcudnn7-7.6.5.33-1.cuda10.2.x86_64.rpm develop library: $ sudo rpm -i libcudnn7-devel-7.6.5.33-1.cuda10.2.x86_64.rpm doc and code samples: $ sudo rpm -i libcudnn7-doc-7.6.5.33-1.cuda10.2.x86_64.rpm","headline":"Centos7 Nvidia Cuda","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/centos7-nvidia-cuda/"},"url":"/posts/centos7-nvidia-cuda/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"lustti","url":"https://github.com/lustti/"},"dateModified":"2020-08-06T11:33:00+08:00","datePublished":"2020-08-06T11:33:00+08:00","description":"Centos7 英伟达显卡驱动和CUDA的安装笔记整理汇总.","headline":"Centos7 英伟达显卡驱动和CUDA的安装","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/centos7-nvidia-cuda/"},"url":"/posts/centos7-nvidia-cuda/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Centos7 Nvidia Cuda | Worklt
+  <title>Centos7 英伟达显卡驱动和CUDA的安装 | Worklt
   </title>
 
   <!--
@@ -440,7 +442,7 @@
         
           
             
-              <span>Centos7 Nvidia Cuda</span>
+              <span>Centos7 英伟达显卡驱动和CUDA的安装</span>
             
 
           
@@ -585,6 +587,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -652,7 +665,9 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>Centos7 Nvidia Cuda</h1>
+    <h1 data-toc-skip>Centos7 英伟达显卡驱动和CUDA的安装</h1>
+    
+      <p class="post-desc fw-light mb-4">Centos7 英伟达显卡驱动和CUDA的安装笔记整理汇总.</p>
     
 
     <div class="post-meta text-muted">
@@ -669,7 +684,7 @@
 
 <time
   
-  data-ts="1596643200"
+  data-ts="1596684780"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -694,7 +709,10 @@
 
           <em>
             
-              <a href="https://twitter.com/lustti">lustti</a>
+              
+                <a href="https://github.com/lustti/">lustti</a>
+                
+              
             
           </em>
         </span>
@@ -724,7 +742,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="913 words"
+  title="910 words"
 >
   <em>5 min</em> read</span>
 
@@ -735,7 +753,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">Centos7 Nvidia Cuda</span>
+      <span class="label text-truncate">Centos7 英伟达显卡驱动和CUDA的安装</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -748,7 +766,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">Centos7 Nvidia Cuda</div>
+        <div class="label text-truncate py-2 ms-4">Centos7 英伟达显卡驱动和CUDA的安装</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -758,8 +776,9 @@
   
 
   <div class="content">
-    <h1 id="centos7-英伟达显卡驱动和cuda的安装">Centos7 英伟达显卡驱动和CUDA的安装</h1>
+    <h2 id="硬件配置"><span class="me-2">硬件配置</span><a href="#硬件配置" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
+  <li>主机：Centos 7.7 64位</li>
   <li>显卡： GeForce GTX 1050</li>
   <li>kernel-release: 3.10.0-1127.el7.x86_64</li>
   <li>驱动：Linux x64 (AMD64/EM64T) Display Driver <a href="https://cn.download.nvidia.com/XFree86/Linux-x86_64/440.100/NVIDIA-Linux-x86_64-440.100.run">Version 440.100</a>.</li>
@@ -1013,8 +1032,35 @@ export PATH
   <div class="post-tail-wrapper text-muted">
     <!-- categories -->
     
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/categories/linux/">Linux</a>,
+          <a href="/categories/centos/">Centos</a>
+      </div>
+    
 
     <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/linux/"
+            class="post-tag no-text-decoration"
+          >Linux</a>
+        
+          <a
+            href="/tags/centos/"
+            class="post-tag no-text-decoration"
+          >Centos</a>
+        
+          <a
+            href="/tags/cuda/"
+            class="post-tag no-text-decoration"
+          >CUDA</a>
+        
+      </div>
     
 
     <div
@@ -1048,21 +1094,21 @@ export PATH
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Centos7%20Nvidia%20Cuda%20-%20Worklt&url=%2Fposts%2Fcentos7-nvidia-cuda%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Centos7%20%E8%8B%B1%E4%BC%9F%E8%BE%BE%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8%E5%92%8CCUDA%E7%9A%84%E5%AE%89%E8%A3%85%20-%20Worklt&url=%2Fposts%2Fcentos7-nvidia-cuda%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Centos7%20Nvidia%20Cuda%20-%20Worklt&u=%2Fposts%2Fcentos7-nvidia-cuda%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Centos7%20%E8%8B%B1%E4%BC%9F%E8%BE%BE%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8%E5%92%8CCUDA%E7%9A%84%E5%AE%89%E8%A3%85%20-%20Worklt&u=%2Fposts%2Fcentos7-nvidia-cuda%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=%2Fposts%2Fcentos7-nvidia-cuda%2F&text=Centos7%20Nvidia%20Cuda%20-%20Worklt" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=%2Fposts%2Fcentos7-nvidia-cuda%2F&text=Centos7%20%E8%8B%B1%E4%BC%9F%E8%BE%BE%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8%E5%92%8CCUDA%E7%9A%84%E5%AE%89%E8%A3%85%20-%20Worklt" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1194,15 +1240,6 @@ export PATH
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1217,109 +1254,6 @@ export PATH
     
     
     
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -1362,6 +1296,167 @@ export PATH
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1412,6 +1507,9 @@ export PATH
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/c/">C++</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/cuda/">CUDA</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/http/">HTTP</a>
@@ -1474,6 +1572,82 @@ export PATH
 
 
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
 
 
 
@@ -1483,6 +1657,98 @@ export PATH
 
 
 
+
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/centos7-python-env/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1594006380"
+  data-df="ll"
+  
+>
+  Jul  6, 2020
+</time>
+
+              <h4 class="pt-0 my-2">Centos 7 python 环境搭建以及初步配置</h4>
+              <div class="text-muted">
+                <p>Centos 7 python 环境搭建以及初步配置笔记整理汇总.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/centos7-firewall/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1594006380"
+  data-df="ll"
+  
+>
+  Jul  6, 2020
+</time>
+
+              <h4 class="pt-0 my-2">Centos 7 Firewall 防火墙</h4>
+              <div class="text-muted">
+                <p>Centos 7 Firewall 防火墙使用笔记整理汇总.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/centos7-ohmyzsh/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1591587180"
+  data-df="ll"
+  
+>
+  Jun  8, 2020
+</time>
+
+              <h4 class="pt-0 my-2">Centos 7 安装oh-my-zsh</h4>
+              <div class="text-muted">
+                <p>Centos 7 安装oh-my-zsh以及初步配置笔记整理汇总.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
+  <!-- #related-posts -->
 
 
             
@@ -1601,15 +1867,6 @@ export PATH
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1624,109 +1881,6 @@ export PATH
     
     
     
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -1769,6 +1923,167 @@ export PATH
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1819,6 +2134,9 @@ export PATH
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/c/">C++</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/cuda/">CUDA</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/http/">HTTP</a>
