@@ -30,23 +30,26 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Tutorial" />
+<meta property="og:title" content="Linux 环境变量文件的比较" />
+<meta name="author" content="lustti" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="A blog for sharing lusting technology knowledge and experiences." />
-<meta property="og:description" content="A blog for sharing lusting technology knowledge and experiences." />
-<link rel="canonical" href="/tags/tutorial/" />
-<meta property="og:url" content="/tags/tutorial/" />
+<meta name="description" content="Linux 不同环境变量文件之间的比较." />
+<meta property="og:description" content="Linux 不同环境变量文件之间的比较." />
+<link rel="canonical" href="/posts/linux-env-config/" />
+<meta property="og:url" content="/posts/linux-env-config/" />
 <meta property="og:site_name" content="Worklt" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-06T11:33:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Tutorial" />
+<meta property="twitter:title" content="Linux 环境变量文件的比较" />
 <meta name="twitter:site" content="@lustti" />
+<meta name="twitter:creator" content="@lustti" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"A blog for sharing lusting technology knowledge and experiences.","headline":"Tutorial","url":"/tags/tutorial/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"lustti","url":"https://github.com/lustti/"},"dateModified":"2025-03-19T16:30:33+08:00","datePublished":"2020-06-06T11:33:00+08:00","description":"Linux 不同环境变量文件之间的比较.","headline":"Linux 环境变量文件的比较","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/linux-env-config/"},"url":"/posts/linux-env-config/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Tutorial | Worklt
+  <title>Linux 环境变量文件的比较 | Worklt
   </title>
 
   <!--
@@ -110,9 +113,16 @@
   <!-- 3rd-party Dependencies -->
 
   
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css">
   
 
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+  
+
+  
+    <!-- Image Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
   
 
   <!-- Scripts -->
@@ -128,6 +138,13 @@
 <!-- layout specified -->
 
 
+  
+
+  
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
+
 
 
 
@@ -177,9 +194,37 @@
 
   
 
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -187,11 +232,15 @@
 
 
 
-<script defer src="/assets/js/dist/misc.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
 
 
 <!-- Pageviews -->
+
+  
+
+  
 
 
 
@@ -390,14 +439,10 @@
           
         
           
-            <span>
-              <a href="/tags/">Tags</a>
-            </span>
-          
         
           
             
-              <span>Tutorial</span>
+              <span>Linux 环境变量文件的比较</span>
             
 
           
@@ -411,7 +456,7 @@
     </button>
 
     <div id="topbar-title">
-      Tag
+      Post
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
@@ -437,125 +482,452 @@
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
+              <!-- Refactor the HTML structure -->
+
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+
+<!-- Handle images -->
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+
+
+
+
+
+
+
+
+
+
+<article class="px-1" data-toc="true">
+  <header>
+    <h1 data-toc-skip>Linux 环境变量文件的比较</h1>
+    
+      <p class="post-desc fw-light mb-4">Linux 不同环境变量文件之间的比较.</p>
+    
+
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1591414380"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Jun  6, 2020
+</time>
+
+      </span>
+
+      <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1742373033"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Mar 19, 2025
+</time>
+
+        </span>
+      
+
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
               
+                <a href="https://github.com/lustti/">lustti</a>
+                
+              
+            
+          </em>
+        </span>
+
+        <div>
+          <!-- pageviews -->
+          
+
+          <!-- read time -->
+          <!-- Calculate the post's reading time, and display the word count in tooltip -->
 
 
 
-<article class="px-1">
-  
-    
-
-
-
-<div id="page-tag">
-  <h1 class="ps-lg-2">
-    <i class="fa fa-tag fa-fw text-muted"></i>
-    Tutorial
-    <span class="lead text-muted ps-2">4</span>
-  </h1>
-  <ul class="content ps-0">
-    
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/posts/customize-the-favicon/">Customize the Favicon</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+<!-- words per minute -->
 
 
 
 
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1565454840"
-  data-df="ll"
-  
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="741 words"
 >
-  Aug 11, 2019
-</time>
+  <em>4 min</em> read</span>
 
-      </li>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Linux 环境变量文件的比较</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Linux 环境变量文件的比较</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
+
+  <div class="content">
+    <blockquote>
+  <p>linux不同环境变量文件的比较，如/etc/profile和/etc/environment
+<a href="https://www.cnblogs.com/YC-L/p/12602616.html">&gt; 原文</a></p>
+</blockquote>
+
+<h2 id="etcprofile"><span class="me-2"><strong>/etc/profile</strong></span><a href="#etcprofile" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>为系统的每个用户设置环境信息和启动程序，当用户第一次登录时，该文件被执行，其配置对所有登录的用户都有效。</p>
+
+<p>当被修改时，必须重启才会生效。英文描述：”System wide environment and startup programs, for login setup.”</p>
+
+<h2 id="etcenvironment"><span class="me-2"><strong>/etc/environment</strong></span><a href="#etcenvironment" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>系统的环境变量，/etc/profile是所有用户的环境变量，前者与登录用户无关，后者与登录用户有关，当同一变量在两个文件里有冲突时，以用户环境为准。</p>
+
+<h2 id="etcbashrc"><span class="me-2"><strong>/etc/bashrc</strong></span><a href="#etcbashrc" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>为每个运行 bash shell 的用户执行该文件，当 bash shell 打开时，该文件被执行，其配置对所有使用bash的用户打开的每个bash都有效。</p>
+
+<p>当被修改后，不用重启只需要打开一个新的 bash 即可生效。英文描述：”System wide functions and aliases.”</p>
+
+<h2 id="bash_profile"><span class="me-2"><strong>~/.bash_profile</strong></span><a href="#bash_profile" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>为当前用户设置专属的环境信息和启动程序，当用户登录时该文件执行一次。默认情况下，它用于设置环境变量，并执行当前用户的 .bashrc 文件。</p>
+
+<p>理念类似于 /etc/profile，只不过只对当前用户有效，也需要重启才能生效。(注意：Centos7系统命名为.bash_profile，其他系统可能是.bash_login或.profile。)</p>
+
+<h2 id="bashrc"><span class="me-2"><strong>~/.bashrc</strong></span><a href="#bashrc" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>为当前用户设置专属的 bash 信息，当每次打开新的shell时，该文件被执行。理念类似于/etc/bashrc，只不过只对当前用户有效，不需要重启只需要打开新的shell即可生效。</p>
+
+<h2 id="bash_logout"><span class="me-2"><strong>~/.bash_logout</strong></span><a href="#bash_logout" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>为当前用户，每次退出bash shell时执行该文件，可以把一些清理工作的命令放进这个文件。</p>
+
+<h2 id="etcprofiled"><span class="me-2"><strong>/etc/profile.d/</strong></span><a href="#etcprofiled" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>此文件夹里是除/etc/profile之外其他的”application-specific startup files”。英文描述为”The /etc/profile file sets the environment variables at startup of the Bash shell. The /etc/profile.d directory contains other scripts that contain application-specific startup files, which are also executed at startup time by the shell.”</p>
+
+<p>同时，这些文件”are loaded via /etc/profile which makes them a part of the bash “profile” in the same way anyway.”</p>
+
+<p>因此可以简单的理解为是/etc/profile的一部分，只不过按类别或功能拆分成若干个文件进行配置了（方便维护和理解）。</p>
+
+<h2 id="注意事项"><span class="me-2">注意事项</span><a href="#注意事项" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>以上需要重启才能生效的文件，其实可以通过source xxx暂时生效。</p>
+
+<p>文件的执行顺序为：当登录Linux时，首先启动/etc/environment和/etc/profile，然后启动当前用户目录下的/.bash_profile，执行此文件时一般会调用/.bashrc文件，而执行/.bashrc时一般会调用/etc/bashrc，最后退出shell时，执行/.bash_logout。简单来说顺序为：</p>
+
+<p>（登录时）/etc/environment –&gt; /etc/profile(以及/etc/profile.d/里的文件) –&gt; ~/.bash_profile –&gt; （打开shell时）~/.bashrc –&gt; /etc/bashrc –&gt; （退出shell时）~/.bash_logout</p>
+
+  </div>
+
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/posts/getting-started/">Getting Started</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1565355300"
-  data-df="ll"
-  
->
-  Aug  9, 2019
-</time>
-
-      </li>
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/categories/linux/">Linux</a>,
+          <a href="/categories/common/">Common</a>
+      </div>
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/posts/write-a-new-post/">Writing a New Post</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
 
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1565244600"
-  data-df="ll"
-  
->
-  Aug  8, 2019
-</time>
-
-      </li>
+    <!-- tags -->
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/posts/text-and-typography/">Text and Typography</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1565235180"
-  data-df="ll"
-  
->
-  Aug  8, 2019
-</time>
-
-      </li>
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/linux/"
+            class="post-tag no-text-decoration"
+          >Linux</a>
+        
+      </div>
     
-  </ul>
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
+
+      <!-- Post sharing snippet -->
+
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+
+      
+
+      <a href="https://twitter.com/intent/tweet?text=Linux%20%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E6%96%87%E4%BB%B6%E7%9A%84%E6%AF%94%E8%BE%83%20-%20Worklt&url=%2Fposts%2Flinux-env-config%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
+      </a>
+    
+
+      
+
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Linux%20%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E6%96%87%E4%BB%B6%E7%9A%84%E6%AF%94%E8%BE%83%20-%20Worklt&u=%2Fposts%2Flinux-env-config%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+        <i class="fa-fw fab fa-facebook-square"></i>
+      </a>
+    
+
+      
+
+      <a href="https://t.me/share/url?url=%2Fposts%2Flinux-env-config%2F&text=Linux%20%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E6%96%87%E4%BB%B6%E7%9A%84%E6%AF%94%E8%BE%83%20-%20Worklt" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+        <i class="fa-fw fab fa-telegram"></i>
+      </a>
+    
+
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
 </div>
 
-  
+    </div>
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
 </article>
+
 
             
           </main>
@@ -895,12 +1267,250 @@
             </div>
 
             
+              
+              
+
+
+
+
+
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+            
           </aside>
         </div>
 
         <div class="row">
           <!-- tail -->
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/linux-search-cmd/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1591414380"
+  data-df="ll"
+  
+>
+  Jun  6, 2020
+</time>
+
+              <h4 class="pt-0 my-2">Linux 查找命令使用简介</h4>
+              <div class="text-muted">
+                <p>Linux 不同查找命令使用简介和比较.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/centos7-python-env/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1594006380"
+  data-df="ll"
+  
+>
+  Jul  6, 2020
+</time>
+
+              <h4 class="pt-0 my-2">Centos 7 python 环境搭建以及初步配置</h4>
+              <div class="text-muted">
+                <p>Centos 7 python 环境搭建以及初步配置笔记整理汇总.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/centos7-firewall/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1594006380"
+  data-df="ll"
+  
+>
+  Jul  6, 2020
+</time>
+
+              <h4 class="pt-0 my-2">Centos 7 Firewall 防火墙</h4>
+              <div class="text-muted">
+                <p>Centos 7 Firewall 防火墙使用笔记整理汇总.</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
+  <!-- #related-posts -->
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/posts/centos7-install-and-init/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>Centos 7 安装以及初步配置</p>
+    </a>
+  
+
+  
+    <a
+      href="/posts/linux-search-cmd/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Linux 查找命令使用简介</p>
+    </a>
+  
+</nav>
+
             
 
             <!-- The Footer -->
@@ -1262,6 +1872,11 @@
     
 
     <!-- Embedded scripts -->
+
+    
+      
+      <!-- The comments switcher -->
+
 
     
 

@@ -11,12 +11,12 @@
     "title": "Git 提交规范",
     "url": "/posts/git-commit/",
     "categories": "Tools, Git",
-    "tags": "Git, 规范",
+    "tags": "Git, Style Guide",
     "date": "2020-08-29 11:33:00 +0800",
     "content": "Git 提交命令使用及 Messages 格式规范."
   },
   {
-    "title": "git 重命名或移动文件和文件夹",
+    "title": "Git 重命名或移动文件和文件夹",
     "url": "/posts/git-mv/",
     "categories": "Tools, Git",
     "tags": "Git",
@@ -24,10 +24,18 @@
     "content": "git mv 命令使用简介."
   },
   {
+    "title": "Centos7 Nvidia Cuda",
+    "url": "/posts/centos7-nvidia-cuda/",
+    "categories": "",
+    "tags": "",
+    "date": "2020-08-06 00:00:00 +0800",
+    "content": "Centos7 英伟达显卡驱动和CUDA的安装    显卡： GeForce GTX 1050   kernel-release: 3.10.0-1127.el7.x86_64   驱动：Linux x64 (AMD64/EM64T) Display Driver Version 440.100.   CUDA: Version 10.2   Results: +--------------..."
+  },
+  {
     "title": "C++代码规范中文版(QT)",
     "url": "/posts/QT-Google-cpp-style-guide-CN/",
     "categories": "Code, C++",
-    "tags": "C++, 规范",
+    "tags": "C++, Style Guide",
     "date": "2020-08-01 16:33:00 +0800",
     "content": "参考谷歌C++代码规范，适用于QT项目的C++代码规范。"
   },
@@ -35,22 +43,70 @@
     "title": "Git 分支模型规范",
     "url": "/posts/git-branch/",
     "categories": "Tools, Git",
-    "tags": "Git, 规范",
+    "tags": "Git, Style Guide",
     "date": "2020-07-27 11:33:00 +0800",
     "content": "本分支模型主要参考了[ Vincent Driessen 博文 ](https://nvie.com/posts/a-successful-git-branching-model/)."
   },
   {
+    "title": "Centos 7 python 环境搭建以及初步配置",
+    "url": "/posts/centos7-python-env/",
+    "categories": "Linux, Centos",
+    "tags": "Linux, Centos, Python",
+    "date": "2020-07-06 11:33:00 +0800",
+    "content": "Centos 7 python 环境搭建以及初步配置笔记整理汇总."
+  },
+  {
+    "title": "Centos 7 Firewall 防火墙",
+    "url": "/posts/centos7-firewall/",
+    "categories": "Linux, Centos",
+    "tags": "Linux, Centos",
+    "date": "2020-07-06 11:33:00 +0800",
+    "content": "Centos 7 Firewall 防火墙使用笔记整理汇总."
+  },
+  {
+    "title": "Centos 7 安装oh-my-zsh",
+    "url": "/posts/centos7-ohmyzsh/",
+    "categories": "Linux, Centos",
+    "tags": "Linux, Centos",
+    "date": "2020-06-08 11:33:00 +0800",
+    "content": "Centos 7 安装oh-my-zsh以及初步配置笔记整理汇总."
+  },
+  {
+    "title": "Linux 查找命令使用简介",
+    "url": "/posts/linux-search-cmd/",
+    "categories": "Linux, Common",
+    "tags": "Linux",
+    "date": "2020-06-06 11:33:00 +0800",
+    "content": "Linux 不同查找命令使用简介和比较."
+  },
+  {
+    "title": "Linux 环境变量文件的比较",
+    "url": "/posts/linux-env-config/",
+    "categories": "Linux, Common",
+    "tags": "Linux",
+    "date": "2020-06-06 11:33:00 +0800",
+    "content": "Linux 不同环境变量文件之间的比较."
+  },
+  {
+    "title": "Centos 7 安装以及初步配置",
+    "url": "/posts/centos7-install-and-init/",
+    "categories": "Linux, Centos",
+    "tags": "Linux, Centos",
+    "date": "2020-05-13 11:33:00 +0800",
+    "content": "Centos 7 安装以及初步配置笔记整理汇总."
+  },
+  {
     "title": "《图解HTTP》",
     "url": "/posts/HTTP-Protocol/",
-    "categories": "Book, http",
-    "tags": "http",
+    "categories": "Books, HTTP",
+    "tags": "HTTP",
     "date": "2019-12-03 13:33:00 +0800",
     "content": "172 张图解轻松入门，从基础知识到新动向，一本书掌握HTTP协议。"
   },
   {
     "title": "Customize the Favicon",
     "url": "/posts/customize-the-favicon/",
-    "categories": "Tutorial",
+    "categories": "Tutorial, Chirpy Jekyll Theme",
     "tags": "Tutorial",
     "date": "2019-08-11 00:34:00 +0800",
     "content": "The favicons of Chirpy are placed in the directory assets/img/favicons/. You may want to replace them with your own. The following sections will guide you to create and replace the default favicons..."
@@ -58,7 +114,7 @@
   {
     "title": "Getting Started",
     "url": "/posts/getting-started/",
-    "categories": "Tutorial",
+    "categories": "Tutorial, Chirpy Jekyll Theme",
     "tags": "Tutorial",
     "date": "2019-08-09 20:55:00 +0800",
     "content": "Get started with Chirpy basics in this comprehensive overview. You will learn how to install, configure, and use your first Chirpy-based website, as well as deploy it to a web server."
@@ -66,7 +122,7 @@
   {
     "title": "Writing a New Post",
     "url": "/posts/write-a-new-post/",
-    "categories": "Tutorial",
+    "categories": "Tutorial, Chirpy Jekyll Theme",
     "tags": "Tutorial",
     "date": "2019-08-08 14:10:00 +0800",
     "content": "This tutorial will guide you how to write a post in the Chirpy template, and it’s worth reading even if you’ve used Jekyll before, as many features require specific variables to be set.  Naming and..."
@@ -74,7 +130,7 @@
   {
     "title": "Text and Typography",
     "url": "/posts/text-and-typography/",
-    "categories": "Tutorial",
+    "categories": "Tutorial, Chirpy Jekyll Theme",
     "tags": "Tutorial",
     "date": "2019-08-08 11:33:00 +0800",
     "content": "Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more."

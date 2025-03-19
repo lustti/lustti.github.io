@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Worklt</title>
   <subtitle>A blog for sharing lusting technology knowledge and experiences.</subtitle>
-  <updated>2025-03-19T12:10:32+08:00</updated>
+  <updated>2025-03-19T16:30:47+08:00</updated>
   <author>
     <name>lustti</name>
     <uri>/</uri>
@@ -50,7 +50,7 @@
     <link href="/posts/git-commit/" rel="alternate" type="text/html" title="Git 提交规范" />
     <published>2020-08-29T11:33:00+08:00</published>
   
-    <updated>2025-03-19T12:10:03+08:00</updated>
+    <updated>2025-03-19T16:21:02+08:00</updated>
   
     <id>/posts/git-commit/</id>
     <content type="text/html" src="/posts/git-commit/" />
@@ -72,11 +72,11 @@
 
   
   <entry>
-    <title>git 重命名或移动文件和文件夹</title>
-    <link href="/posts/git-mv/" rel="alternate" type="text/html" title="git 重命名或移动文件和文件夹" />
+    <title>Git 重命名或移动文件和文件夹</title>
+    <link href="/posts/git-mv/" rel="alternate" type="text/html" title="Git 重命名或移动文件和文件夹" />
     <published>2020-08-27T11:33:00+08:00</published>
   
-    <updated>2025-03-16T17:18:39+08:00</updated>
+    <updated>2025-03-19T16:29:54+08:00</updated>
   
     <id>/posts/git-mv/</id>
     <content type="text/html" src="/posts/git-mv/" />
@@ -98,11 +98,33 @@
 
   
   <entry>
+    <title>Centos7 Nvidia Cuda</title>
+    <link href="/posts/centos7-nvidia-cuda/" rel="alternate" type="text/html" title="Centos7 Nvidia Cuda" />
+    <published>2020-08-06T00:00:00+08:00</published>
+  
+    <updated>2020-08-06T00:00:00+08:00</updated>
+  
+    <id>/posts/centos7-nvidia-cuda/</id>
+    <content type="text/html" src="/posts/centos7-nvidia-cuda/" />
+    <author>
+      <name>lustti</name>
+    </author>
+
+  
+    
+  
+
+  <summary>Centos7 英伟达显卡驱动和CUDA的安装    显卡： GeForce GTX 1050   kernel-release: 3.10.0-1127.el7.x86_64   驱动：Linux x64 (AMD64/EM64T) Display Driver Version 440.100.   CUDA: Version 10.2   Results: +-----------------------------------------------------------------------------+ | NVIDIA-SMI 440.100      Driver Version: 440.100      CUDA Version: 10.2     | |-------------------------------+----------------------...</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>C++代码规范中文版(QT)</title>
     <link href="/posts/QT-Google-cpp-style-guide-CN/" rel="alternate" type="text/html" title="C++代码规范中文版(QT)" />
     <published>2020-08-01T16:33:00+08:00</published>
   
-    <updated>2025-03-19T12:06:08+08:00</updated>
+    <updated>2025-03-19T16:21:02+08:00</updated>
   
     <id>/posts/QT-Google-cpp-style-guide-CN/</id>
     <content type="text/html" src="/posts/QT-Google-cpp-style-guide-CN/" />
@@ -119,32 +141,6 @@
   
 
   <summary>参考谷歌C++代码规范，适用于QT项目的C++代码规范。</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Git 分支模型规范</title>
-    <link href="/posts/git-branch/" rel="alternate" type="text/html" title="Git 分支模型规范" />
-    <published>2020-07-27T11:33:00+08:00</published>
-  
-    <updated>2025-03-19T12:10:15+08:00</updated>
-  
-    <id>/posts/git-branch/</id>
-    <content type="text/html" src="/posts/git-branch/" />
-    <author>
-      <name>lustti</name>
-    </author>
-
-  
-    
-    <category term="Tools" />
-    
-    <category term="Git" />
-    
-  
-
-  <summary>本分支模型主要参考了[ Vincent Driessen 博文 ](https://nvie.com/posts/a-successful-git-branching-model/).</summary>
 
   </entry>
 
