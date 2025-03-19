@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Worklt</title>
   <subtitle>A blog for sharing lusting technology knowledge and experiences.</subtitle>
-  <updated>2025-03-19T16:30:47+08:00</updated>
+  <updated>2025-03-19T16:48:24+08:00</updated>
   <author>
     <name>lustti</name>
     <uri>/</uri>
@@ -76,7 +76,7 @@
     <link href="/posts/git-mv/" rel="alternate" type="text/html" title="Git 重命名或移动文件和文件夹" />
     <published>2020-08-27T11:33:00+08:00</published>
   
-    <updated>2025-03-19T16:29:54+08:00</updated>
+    <updated>2025-03-19T16:47:52+08:00</updated>
   
     <id>/posts/git-mv/</id>
     <content type="text/html" src="/posts/git-mv/" />
