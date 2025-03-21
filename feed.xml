@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>/</id>
+  <id>http://localhost:4000/</id>
   <title>Worklt</title>
   <subtitle>A blog for sharing lusting technology knowledge and experiences.</subtitle>
-  <updated>2025-03-19T18:01:11+08:00</updated>
+  <updated>2025-03-21T08:56:08+08:00</updated>
   <author>
     <name>lustti</name>
-    <uri>/</uri>
+    <uri>http://localhost:4000/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
-    href="/"/>
+    href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
   <rights> © 2025 lustti </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -21,13 +21,13 @@
   
   <entry>
     <title>C++ 类型转换和类型强制转换</title>
-    <link href="/posts/Cpp-Type-Conversion-and-Casting/" rel="alternate" type="text/html" title="C++ 类型转换和类型强制转换" />
+    <link href="http://localhost:4000/posts/Cpp-Type-Conversion-and-Casting/" rel="alternate" type="text/html" title="C++ 类型转换和类型强制转换" />
     <published>2020-09-01T16:33:00+08:00</published>
   
     <updated>2025-03-16T17:18:47+08:00</updated>
   
-    <id>/posts/Cpp-Type-Conversion-and-Casting/</id>
-    <content type="text/html" src="/posts/Cpp-Type-Conversion-and-Casting/" />
+    <id>http://localhost:4000/posts/Cpp-Type-Conversion-and-Casting/</id>
+    <content type="text/html" src="http://localhost:4000/posts/Cpp-Type-Conversion-and-Casting/" />
     <author>
       <name>lustti</name>
     </author>
@@ -47,13 +47,13 @@
   
   <entry>
     <title>Git 提交规范</title>
-    <link href="/posts/git-commit/" rel="alternate" type="text/html" title="Git 提交规范" />
+    <link href="http://localhost:4000/posts/git-commit/" rel="alternate" type="text/html" title="Git 提交规范" />
     <published>2020-08-29T11:33:00+08:00</published>
   
     <updated>2025-03-19T16:21:02+08:00</updated>
   
-    <id>/posts/git-commit/</id>
-    <content type="text/html" src="/posts/git-commit/" />
+    <id>http://localhost:4000/posts/git-commit/</id>
+    <content type="text/html" src="http://localhost:4000/posts/git-commit/" />
     <author>
       <name>lustti</name>
     </author>
@@ -73,13 +73,13 @@
   
   <entry>
     <title>Git 重命名或移动文件和文件夹</title>
-    <link href="/posts/git-mv/" rel="alternate" type="text/html" title="Git 重命名或移动文件和文件夹" />
+    <link href="http://localhost:4000/posts/git-mv/" rel="alternate" type="text/html" title="Git 重命名或移动文件和文件夹" />
     <published>2020-08-27T11:33:00+08:00</published>
   
     <updated>2025-03-19T16:47:52+08:00</updated>
   
-    <id>/posts/git-mv/</id>
-    <content type="text/html" src="/posts/git-mv/" />
+    <id>http://localhost:4000/posts/git-mv/</id>
+    <content type="text/html" src="http://localhost:4000/posts/git-mv/" />
     <author>
       <name>lustti</name>
     </author>
@@ -99,13 +99,13 @@
   
   <entry>
     <title>Centos7 英伟达显卡驱动和CUDA的安装</title>
-    <link href="/posts/centos7-nvidia-cuda/" rel="alternate" type="text/html" title="Centos7 英伟达显卡驱动和CUDA的安装" />
+    <link href="http://localhost:4000/posts/centos7-nvidia-cuda/" rel="alternate" type="text/html" title="Centos7 英伟达显卡驱动和CUDA的安装" />
     <published>2020-08-06T11:33:00+08:00</published>
   
     <updated>2025-03-19T17:07:43+08:00</updated>
   
-    <id>/posts/centos7-nvidia-cuda/</id>
-    <content type="text/html" src="/posts/centos7-nvidia-cuda/" />
+    <id>http://localhost:4000/posts/centos7-nvidia-cuda/</id>
+    <content type="text/html" src="http://localhost:4000/posts/centos7-nvidia-cuda/" />
     <author>
       <name>lustti</name>
     </author>
@@ -125,13 +125,13 @@
   
   <entry>
     <title>Bug 严重级别定义</title>
-    <link href="/posts/bug-level-definition/" rel="alternate" type="text/html" title="Bug 严重级别定义" />
+    <link href="http://localhost:4000/posts/bug-level-definition/" rel="alternate" type="text/html" title="Bug 严重级别定义" />
     <published>2020-08-06T11:33:00+08:00</published>
   
     <updated>2025-03-19T18:01:03+08:00</updated>
   
-    <id>/posts/bug-level-definition/</id>
-    <content type="text/html" src="/posts/bug-level-definition/" />
+    <id>http://localhost:4000/posts/bug-level-definition/</id>
+    <content type="text/html" src="http://localhost:4000/posts/bug-level-definition/" />
     <author>
       <name>lustti</name>
     </author>

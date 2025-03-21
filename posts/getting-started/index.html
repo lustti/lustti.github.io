@@ -35,8 +35,8 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="Get started with Chirpy basics in this comprehensive overview. You will learn how to install, configure, and use your first Chirpy-based website, as well as deploy it to a web server." />
 <meta property="og:description" content="Get started with Chirpy basics in this comprehensive overview. You will learn how to install, configure, and use your first Chirpy-based website, as well as deploy it to a web server." />
-<link rel="canonical" href="/posts/getting-started/" />
-<meta property="og:url" content="/posts/getting-started/" />
+<link rel="canonical" href="http://localhost:4000/posts/getting-started/" />
+<meta property="og:url" content="http://localhost:4000/posts/getting-started/" />
 <meta property="og:site_name" content="Worklt" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-08-09T20:55:00+08:00" />
@@ -45,7 +45,7 @@
 <meta name="twitter:site" content="@lustti" />
 <meta name="twitter:creator" content="@cotes2020" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Cotes Chung","url":"https://github.com/cotes2020/"},"dateModified":"2025-03-19T16:21:49+08:00","datePublished":"2019-08-09T20:55:00+08:00","description":"Get started with Chirpy basics in this comprehensive overview. You will learn how to install, configure, and use your first Chirpy-based website, as well as deploy it to a web server.","headline":"Getting Started","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/getting-started/"},"url":"/posts/getting-started/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Cotes Chung","url":"https://github.com/cotes2020/"},"dateModified":"2025-03-21T08:38:37+08:00","datePublished":"2019-08-09T20:55:00+08:00","description":"Get started with Chirpy basics in this comprehensive overview. You will learn how to install, configure, and use your first Chirpy-based website, as well as deploy it to a web server.","headline":"Getting Started","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/getting-started/"},"url":"http://localhost:4000/posts/getting-started/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -970,13 +970,13 @@
 
 <time
   
-  data-ts="1742372509"
+  data-ts="1742517517"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Mar 19, 2025
+  Mar 21, 2025
 </time>
 
         </span>
@@ -1026,7 +1026,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="797 words"
+  title="831 words"
 >
   <em>4 min</em> read</span>
 
@@ -1188,6 +1188,16 @@
 </pre></td><td class="rouge-code"><pre><span class="gp">$</span><span class="w"> </span>bundle lock <span class="nt">--add-platform</span> x86_64-linux
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
+  <li>
+    <p>If you encounter an “ffi” error when using WSL, , try update the platform list of the lock file:</p>
+
+    <div class="language-console highlighter-rouge"><div class="code-header">
+        <span data-label-text="Console"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="gp">$</span><span class="w"> </span>bundle lock <span class="nt">--add-platform</span> x64-mingw32
+</pre></td></tr></tbody></table></code></div>    </div>
+    <p>Then remove <code class="language-plaintext highlighter-rouge">x86_64-linux</code> and other useless platform in <code class="language-plaintext filepath highlighter-rouge">Gemfile.lock</code></p>
+  </li>
 </ul>
 
 <p>Next, configure the <em>Pages</em> service:</p>
@@ -1228,8 +1238,8 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/tutorial/">Tutorial</a>,
-          <a href="/categories/chirpy-jekyll-theme/">Chirpy Jekyll Theme</a>
+          <a href="/categories/web/">Web</a>,
+          <a href="/categories/jekyll/">Jekyll</a>
       </div>
     
 
@@ -1239,9 +1249,14 @@
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/tutorial/"
+            href="/tags/web/"
             class="post-tag no-text-decoration"
-          >Tutorial</a>
+          >Web</a>
+        
+          <a
+            href="/tags/jekyll/"
+            class="post-tag no-text-decoration"
+          >Jekyll</a>
         
       </div>
     
@@ -1277,21 +1292,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Getting%20Started%20-%20Worklt&url=%2Fposts%2Fgetting-started%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Getting%20Started%20-%20Worklt&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fgetting-started%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Getting%20Started%20-%20Worklt&u=%2Fposts%2Fgetting-started%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Getting%20Started%20-%20Worklt&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fgetting-started%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=%2Fposts%2Fgetting-started%2F&text=Getting%20Started%20-%20Worklt" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fgetting-started%2F&text=Getting%20Started%20-%20Worklt" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1346,35 +1361,35 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/text-and-typography/">Text and Typography</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/write-a-new-post/">Writing a New Post</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/getting-started/">Getting Started</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/customize-the-favicon/">Customize the Favicon</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/bug-level-definition/">Bug 严重级别定义</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/centos7-nvidia-cuda/">Centos7 英伟达显卡驱动和CUDA的安装</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/git-branch/">Git 分支模型规范</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/git-mv/">Git 重命名或移动文件和文件夹</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/HTTP-Protocol/">《图解HTTP》</a>
         </li>
       
     </ul>
@@ -1438,20 +1453,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1461,21 +1462,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1504,28 +1490,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1593,6 +1557,122 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1686,51 +1766,6 @@
     
     
       
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
     
   
     
@@ -1757,10 +1792,13 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/git/">Git</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/jekyll/">Jekyll</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/style-guide/">Style Guide</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tutorial/">Tutorial</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/c/">C++</a>
@@ -1773,9 +1811,6 @@
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/development/">Development</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/http/">HTTP</a>
       
     </div>
   </section>
@@ -2106,20 +2141,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2129,21 +2150,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2172,28 +2178,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2261,6 +2245,122 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2354,51 +2454,6 @@
     
     
       
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
     
   
     
@@ -2425,10 +2480,13 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/git/">Git</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/jekyll/">Jekyll</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/style-guide/">Style Guide</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tutorial/">Tutorial</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/c/">C++</a>
@@ -2441,9 +2499,6 @@
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/development/">Development</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/http/">HTTP</a>
       
     </div>
   </section>
