@@ -14,7 +14,7 @@ Working on Loving Technology...
 
 ## Workflow（Start from branch `main`）
 > - branch `main`: New and edit Markdown files content branch.
-> - branch `build`: You Jekyll theme or others generattor code branch.
+> - branch `build`: Your Jekyll theme or others generator code branch.
 > - branch `pages`: Generated original website results.
 
 ```mermaid
