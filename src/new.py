@@ -3,6 +3,7 @@ import os
 import datetime
 import time
 import glob
+import re
 
 def GetLocalTime():
   """ get local time """
@@ -14,7 +15,7 @@ def UTC2Local(utc_st):
     """UTC to local（+8: 00）"""
     local_time =  GetLocalTime()
     now_stamp = time.mktime(local_time.timetuple())
-    utc_time = datetime.datetime.utcfromtimestamp(now_stamp)
+    utc_time = datetime.datetime.fromtimestamp(now_stamp, tz=datetime.timezone.utc)
     offset = local_time - utc_time
     local_st = utc_st + offset
     return local_st
@@ -23,7 +24,7 @@ def UTC2Local(utc_st):
 def Local2UTC(local_st):
     """local time to UTC time（-8: 00）"""
     time_stamp = time.mktime(local_st.timetuple())
-    utc_st = datetime.datetime.utcfromtimestamp(time_stamp)
+    utc_st = datetime.datetime.fromtimestamp(time_stamp, tz=datetime.timezone.utc)
     return utc_st
 
 def GetDateText():
@@ -80,7 +81,9 @@ def GetBlogBaseDataFromArgv(argv):
         print("InputErro: Please input blog title text after -t")
         return
       else:
-        blogBaseData['title'] = argv[index]
+        titleText = argv[index].strip().strip('.').replace(' ','_')
+        # replace the multiple '_' to single '_'
+        blogBaseData['title'] = re.sub(r'_{2,}', '_', titleText)
     elif '-e' == argv[index]: # extra
       index +=1
       if index >= nPara:
@@ -203,13 +206,15 @@ def main(argv):
         print(GetUTCTimeText())
         os.rename(sameFile[updateIndex],filepath) ## rename file to update the date
         return
+  title = blogBaseData['title'].replace('_',' ')
   postfile=open(filepath,'w',encoding='utf-8')
-  headText=getHeadText(blogBaseData)
-  postfile.write(headText)
+  # headText=getHeadText(blogBaseData)
+  # postfile.write(headText)
+  postfile.write('# '+title+'\n')
   postfile.close
 
   print('new post successed: '+filepath)
-  print('title: '+blogBaseData['title'])
+  print('title: '+title)
 
 if __name__ == "__main__":
     main(sys.argv)
