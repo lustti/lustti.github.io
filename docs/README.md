@@ -43,6 +43,14 @@
 
 To learn how to use, develop, and upgrade the project, please refer to the [Wiki][wiki].
 
+Tutorial
+- [Getting Started](./manual/2019-08-09-getting-started.md)
+- [Customize the Favicon](./manual/2019-08-11-customize-the-favicon.md)
+- [Writing a New Post](./manual/2019-08-08-write-a-new-post.md)
+
+Showcase
+- [Text and Typography](./manual/2019-08-08-text-and-typography.md)
+
 ## Contributing
 
 Contributions (_pull requests_, _issues_, and _discussions_) are what make the open-source community such an amazing place
