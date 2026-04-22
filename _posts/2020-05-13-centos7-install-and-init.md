@@ -3,8 +3,8 @@ title: Centos 7 安装以及初步配置
 description: Centos 7 安装以及初步配置笔记整理汇总.
 author: lustti
 date: 2020-05-13 11:33:00 +0800
-categories: [Linux, Centos]
-tags: [OS, Centos]
+categories: [OS, Centos]
+tags: [Linux, Centos]
 pin: false
 ---
 
