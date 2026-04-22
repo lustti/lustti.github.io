@@ -3,7 +3,7 @@ title: Centos 7 Firewall 防火墙
 description: Centos 7 Firewall 防火墙使用笔记整理汇总.
 author: lustti
 date: 2020-07-06 11:33:00 +0800
-categories: [Linux, Centos]
+categories: [OS, Centos]
 tags: [Linux, Centos]
 pin: false
 ---

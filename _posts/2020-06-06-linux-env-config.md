@@ -3,7 +3,7 @@ title: Linux 环境变量文件的比较
 description: Linux 不同环境变量文件之间的比较.
 author: lustti
 date: 2020-06-06 11:33:00 +0800
-categories: [Linux, Common]
+categories: [OS, Linux]
 tags: [Linux]
 pin: false
 ---

@@ -4,7 +4,7 @@ description: Centos 7 安装oh-my-zsh以及初步配置笔记整理汇总.
 author: lustti
 date: 2020-06-08 11:33:00 +0800
 categories: [Linux, Centos]
-tags: [Linux, Centos]
+tags: [OS, Centos]
 pin: false
 ---
 

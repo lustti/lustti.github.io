@@ -3,7 +3,7 @@ title: Centos7 英伟达显卡驱动和CUDA的安装
 description: Centos7 英伟达显卡驱动和CUDA的安装笔记整理汇总.
 author: lustti
 date: 2020-08-06 11:33:00 +0800
-categories: [Linux, Centos]
+categories: [OS, Centos]
 tags: [Linux, Centos, CUDA]
 pin: false
 ---

@@ -3,7 +3,7 @@ title: Linux 查找命令使用简介
 description: Linux 不同查找命令使用简介和比较.
 author: lustti
 date: 2020-06-06 11:33:00 +0800
-categories: [Linux, Common]
+categories: [OS, Linux]
 tags: [Linux]
 pin: false
 ---
