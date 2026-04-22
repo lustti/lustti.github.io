@@ -1,4 +1,4 @@
-#  QT项目代码规范谷歌版本
+#  QT 项目代码规范谷歌版本
 本规范参考[谷歌C++代码规范](https://google.github.io/styleguide/cppguide.html)为蓝本修改了，修改参考了[QT代码规范](https://wiki.qt.io/Qt_Coding_Style/zh)以及公司其他规范。
 
 本文档依照项目的实际情况进行必要的修改，以及提炼出经常要注意以及容易被遗忘的内容整理于此。对于本文未提及的内容以谷歌规范为准。

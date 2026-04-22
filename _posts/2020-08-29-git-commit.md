@@ -1,11 +1,11 @@
-# git 提交规范
+# Git 提交规范
 
-* [提交流程](#提交流程)
-* [commit message 格式规范](#commit-message-格式规范)
-  * [type(必须)](#type必须)
-  * [scope(可选)](#scope可选)
-  * [subject(必须)](#subject必须)
-  * [例子](#例子)
+- [提交流程](#提交流程)
+- [commit message 格式规范](#commit-message-格式规范)
+  - [type(必须)](#type必须)
+  - [scope(可选)](#scope可选)
+  - [subject(必须)](#subject必须)
+  - [例子](#例子)
 
 ## 提交流程
 按照以下标准的流程避免不规范的提交：

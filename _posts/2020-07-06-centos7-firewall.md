@@ -1,4 +1,4 @@
-# Centos firewall
+# Centos 防火墙
 
 ## open ports to acess firewall
 - 查看防火墙是否开启： `systemctl status firewalld`
