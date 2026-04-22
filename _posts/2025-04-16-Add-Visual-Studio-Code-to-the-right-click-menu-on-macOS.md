@@ -2,7 +2,7 @@
 title: 添加VS Code 到 macOS 右键菜单
 description: 添加VS Code 到 macOS 右键菜单，用于方便快捷打开项目文件夹或文件.
 author: lustti
-date: 2020-06-06 11:33:00 +0800
+date: 2025-04-16 11:33:00 +0800
 categories: [Linux, Common]
 tags: [Linux]
 pin: false
