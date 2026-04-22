@@ -1,16 +1,16 @@
-<!-- markdownlint-disable-next-line -->
-<div align="center">
+# [worklt.tech](https://worklt.tech/)
 
-  <!-- markdownlint-disable-next-line -->
-  # [Chirpy Jekyll Theme](docs/README.md)
+Working on Lusting Technology...
+- AI: Deep learning, Transformer, Stable difffusion, whisper
+- Physics: Fluid Dynamics, Biophysics
+- ...
 
-  A minimal, responsive, and feature-rich Jekyll theme for technical writing.
 
-  ![Devices Mockup](https://chirpy-img.netlify.app/commons/devices-mockup.png)
-
-</div>
-
----
+## 文件目录
+- 代码：[src](src)
+- 推文：[_posts](_posts)
+- 书籍：[_books](_books)
+- 静态文件：[assets](assets) -> 包含图片等二进制文件
 
 ## Manual
 
