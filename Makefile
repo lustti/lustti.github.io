@@ -23,6 +23,12 @@ install:
 serve:
 	$(JEKYLL) serve --drafts --livereload
 
+run:
+	bash tools/run.sh
+
+test:
+	bash tools/test.sh
+
 # Build production version
 build:
 	JEKYLL_ENV=production $(JEKYLL) build
