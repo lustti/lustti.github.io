@@ -1,5 +1,12 @@
-# Centos firewall
-
+---
+title: Centos 7 Firewall 防火墙
+description: Centos 7 Firewall 防火墙使用笔记整理汇总.
+author: lustti
+date: 2020-07-06 11:33:00 +0800
+categories: [Linux, Centos]
+tags: [Linux, Centos]
+pin: false
+---
 ## open ports to acess firewall
 - 查看防火墙是否开启： `systemctl status firewalld`
 - 开启防火墙： `systemctl start firewalld`  关闭则start改为stop

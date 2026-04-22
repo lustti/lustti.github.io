@@ -1,59 +1,19 @@
-#  QT项目代码规范谷歌版本
+---
+title: C++代码规范中文版(QT)
+description: 参考谷歌C++代码规范，适用于QT项目的C++代码规范。
+author: lustti
+date: 2020-08-01 16:33:00 +0800
+categories: [Code, C++]
+tags: [C++, Style Guide]
+pin: false
+---
+
 本规范参考[谷歌C++代码规范](https://google.github.io/styleguide/cppguide.html)为蓝本修改了，修改参考了[QT代码规范](https://wiki.qt.io/Qt_Coding_Style/zh)以及公司其他规范。
 
 本文档依照项目的实际情况进行必要的修改，以及提炼出经常要注意以及容易被遗忘的内容整理于此。对于本文未提及的内容以谷歌规范为准。
 
 > PS：[谷歌C++代码规范中文版](/assets/others/Google-Cpp_Style_guide-CN.pdf)，**请在阅读本规范之前至少阅读一遍该文档**。<br>
 > 具体实现可以多多参考Chromium 项目源码
-
-## 目录
-
-- [目录](#目录)
-- [IDE 代码格式配置](#ide-代码格式配置)
-  - [Visual studio （2019）配置](#visual-studio-2019配置)
-  - [VS Code 配置](#vs-code-配置)
-- [头文件](#头文件)
-  - [`#define` 的保护\[必须\]](#define-的保护必须)
-  - [包含文件的名称及次序\[含必须\]](#包含文件的名称及次序含必须)
-  - [其他\[含必须\]](#其他含必须)
-- [作用域](#作用域)
-- [类](#类)
-  - [接口（Interface）](#接口interface)
-  - [拷贝构造函数（Copy Constructors）](#拷贝构造函数copy-constructors)
-  - [多重继承（Multiple Inheritance）](#多重继承multiple-inheritance)
-  - [其他补充类规范](#其他补充类规范)
-- [命名\[必须\]](#命名必须)
-  - [文件命名（File Names）](#文件命名file-names)
-  - [类型命名（Type Names）](#类型命名type-names)
-  - [变量命名（Variable Names）](#变量命名variable-names)
-  - [常量命名（Constant Names）](#常量命名constant-names)
-  - [函数命名（Function Names）](#函数命名function-names)
-  - [命名空间（Namespace Names）](#命名空间namespace-names)
-  - [枚举命名（Enumerator Names）](#枚举命名enumerator-names)
-  - [宏命名（Macro Names）](#宏命名macro-names)
-- [注释](#注释)
-  - [注释风格（Comment Style）\[必须\]](#注释风格comment-style必须)
-  - [文件注释（File Comments）](#文件注释file-comments)
-  - [类注释（Class Comments）](#类注释class-comments)
-  - [函数注释（Function Comments）](#函数注释function-comments)
-  - [变量注释（Variable Comments）](#变量注释variable-comments)
-  - [实现注释（Implementation Comments）](#实现注释implementation-comments)
-  - [标点、拼写和语法（ Punctuation,Spelling and  Grammar）](#标点拼写和语法-punctuationspelling-and--grammar)
-  - [TODO注释（TODO Comments）\[必须\]](#todo注释todo-comments必须)
-- [格式](#格式)
-  - [行长度（Line Length）\[必须\]](#行长度line-length必须)
-  - [非ASCII字符（Non-ASCII Characters）\[必须\]](#非ascii字符non-ascii-characters必须)
-  - [空格还是制表位（Spacesvs.Tabs）\[必须\]](#空格还是制表位spacesvstabs必须)
-  - [函数声明与定义（Function Declarations and Definitions）](#函数声明与定义function-declarations-and-definitions)
-  - [函数调用（Function Calls）](#函数调用function-calls)
-  - [条件语句（Conditionals）](#条件语句conditionals)
-  - [循环和开关选择语句（Switch Statements）](#循环和开关选择语句switch-statements)
-  - [指针和引用表达式（Pointers and Reference）](#指针和引用表达式pointers-and-reference)
-  - [布尔表达式（Boolean Expressions）](#布尔表达式boolean-expressions)
-  - [类格式（Class Format）](#类格式class-format)
-  - [初始化列表（Initializer Lists）](#初始化列表initializer-lists)
-  - [其他补充格式](#其他补充格式)
-- [其他补充规范](#其他补充规范)
 
 ## IDE 代码格式配置
 ### Visual studio （2019）配置

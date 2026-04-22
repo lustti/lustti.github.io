@@ -1,4 +1,15 @@
-# Centos7 英伟达显卡驱动和CUDA的安装
+---
+title: Centos7 英伟达显卡驱动和CUDA的安装
+description: Centos7 英伟达显卡驱动和CUDA的安装笔记整理汇总.
+author: lustti
+date: 2020-08-06 11:33:00 +0800
+categories: [Linux, Centos]
+tags: [Linux, Centos, CUDA]
+pin: false
+---
+
+## 硬件配置
+- 主机：Centos 7.7 64位
 - 显卡： GeForce GTX 1050
 - kernel-release: 3.10.0-1127.el7.x86_64
 - 驱动：Linux x64 (AMD64/EM64T) Display Driver [Version 440.100](https://cn.download.nvidia.com/XFree86/Linux-x86_64/440.100/NVIDIA-Linux-x86_64-440.100.run).

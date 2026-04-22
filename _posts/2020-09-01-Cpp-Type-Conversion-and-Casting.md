@@ -1,4 +1,12 @@
-# C++ 类型转换和类型强制转换
+---
+title: C++ 类型转换和类型强制转换
+description: C++ 类型转换和类型强制转换的介绍和使用方法。
+author: lustti
+date: 2020-09-01 16:33:00 +0800
+categories: [Code, C++]
+tags: [C++]
+pin: false
+---
 
 **Type Conversion and Casting**
 > - 强烈建议在代码中坚持只使用新式的类型强制转换

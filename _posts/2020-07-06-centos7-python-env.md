@@ -1,4 +1,13 @@
-# python 环境搭建和配置
+---
+title: Centos 7 python 环境搭建以及初步配置
+description: Centos 7 python 环境搭建以及初步配置笔记整理汇总.
+author: lustti
+date: 2020-07-06 11:33:00 +0800
+categories: [Linux, Centos]
+tags: [Linux, Centos, Python]
+pin: false
+---
+
 ## 安装 python
 Centos 7.8 自带 python 2.7.5, 所以只需要安装 python3: `sudo yum -y install python3` 
 ```sh
@@ -70,7 +79,8 @@ VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source virtualenvwrapper: /home/ti/.local/bin/virtualenvwrapper.sh
 ```
 
-### `virtualenvwrapper` 命令简介，具体参加详细说明书: [virtualenvwrapper-readthedocs-io-en-latest.pdf](virtualenvwrapper-readthedocs-io-en-latest.pdf)
+### `virtualenvwrapper` 命令简介
+
 - **Managing Environments**
   * `mkvirtualenv`: Create a new virtualenv in $WORKON_HOME
   * `mktmpenv`: create a temporary virtualenv
@@ -102,4 +112,4 @@ source virtualenvwrapper: /home/ti/.local/bin/virtualenvwrapper.sh
 ## 常用模块安装
 - **matplotlib**: `pip3 install --user matplotlib`
 - **numpy**: `pip3 install --user numpy`
-- **pandas**: `pip3 install --user pandas`wo
+- **pandas**: `pip3 install --user pandas`

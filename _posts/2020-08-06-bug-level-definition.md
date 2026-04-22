@@ -1,4 +1,12 @@
-# Bug 严重级别定义
+---
+title: Bug 严重级别定义
+description: Bug 严重级别定义以及对应的处理方式.
+author: lustti
+date: 2020-08-06 11:33:00 +0800
+categories: [Project, Development]
+tags: [Bug, Development, Style Guide]
+pin: false
+---
 
 ![bug level definition](/assets/imgs/posts/2020-08-06-bug-level-definition.png)
 

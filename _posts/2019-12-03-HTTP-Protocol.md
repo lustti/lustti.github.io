@@ -1,4 +1,14 @@
-# 图解HTTP
+---
+title: 《图解HTTP》
+description: 172 张图解轻松入门，从基础知识到新动向，一本书掌握HTTP协议。
+author: lustti
+date: 2019-12-03 13:33:00 +0800
+categories: [Books, HTTP]
+tags: [HTTP]
+pin: false
+image:
+  path: /assets/imgs/books/TuJieHTTP/cover.jpg
+---
 
 > 《图解HTTP》-上野宣著，于均良译。读书笔记，知识整理。
 <!--more-->

@@ -1,11 +1,12 @@
-# git 提交规范
-
-* [提交流程](#提交流程)
-* [commit message 格式规范](#commit-message-格式规范)
-  * [type(必须)](#type必须)
-  * [scope(可选)](#scope可选)
-  * [subject(必须)](#subject必须)
-  * [例子](#例子)
+---
+title: Git 提交规范
+description: Git 提交命令使用及 Messages 格式规范.
+author: lustti
+date: 2020-08-29 11:33:00 +0800
+categories: [Tools, Git]
+tags: [Git, Style Guide]
+pin: false
+---
 
 ## 提交流程
 按照以下标准的流程避免不规范的提交：

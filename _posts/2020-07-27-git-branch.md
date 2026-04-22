@@ -1,12 +1,14 @@
-# 分支模型规范
-> 本分支模型主要参考了[ Vincent Driessen 博文 ](https://nvie.com/posts/a-successful-git-branching-model/).
+---
+title: Git 分支模型规范
+description: 本分支模型主要参考了[ Vincent Driessen 博文 ](https://nvie.com/posts/a-successful-git-branching-model/).
+author: lustti
+date: 2020-07-27 11:33:00 +0800
+categories: [Tools, Git]
+tags: [Git, Style Guide]
+pin: false
+---
 
-- [主分支](#主分支)
-- [辅助分支](#辅助分支)
-  - [feature 分支](#feature-分支)
-  - [Release 分支](#release-分支)
-- [Hotfix 分支](#hotfix-分支)
-- [额外分支](#额外分支)
+## 分支模型总览
 
 ![分支模型](/assets/imgs/posts/2020-07-27-git-branch/git-model@2x.jpg)
 
@@ -151,7 +153,7 @@ Deleted branch hotfix-1.2.1 (was abbe5d6).
 ## 额外分支
 本项目的仓库会有两个长期的额外分支：
 - **demo**: 用于维护项目相关模块开发预研的程序demo
-- **doc**: 用于维护项目相关的文档
+- **doc**: 用于维护项目相关的文档，可用于展示项目使用在pages上
 
 **demo** 分支规范：
 - 一次提交只能提交某一个demo的相关内容

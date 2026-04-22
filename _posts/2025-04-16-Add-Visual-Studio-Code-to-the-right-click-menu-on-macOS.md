@@ -1,4 +1,13 @@
-# 添加VS Code 到 macOS 右键菜单
+---
+title: 添加VS Code 到 macOS 右键菜单
+description: 添加VS Code 到 macOS 右键菜单，用于方便快捷打开项目文件夹或文件.
+author: lustti
+date: 2020-06-06 11:33:00 +0800
+categories: [Linux, Common]
+tags: [Linux]
+pin: false
+---
+
 
 在 macOS 系统里，你可以借助 Automator 应用程序把 Visual Studio Code 添加到右键菜单。以下是具体步骤：
 
@@ -10,14 +19,14 @@
 4. **添加运行 Shell 脚本操作**：在左侧的操作列表中，找到 “实用工具” 类别，然后将 “运行 Shell 脚本” 操作拖到右侧的工作流程区域。
   ![step 1](/assets/imgs/posts/2025-04-16-Add-Visual-Studio-Code-to-the-right-click-menu-on-macOS/OpenVSCode-01.png)
 
-5. **编写 Shell 脚本**：在 “运行 Shell 脚本” 操作中，确保 “shell” 设置为 “/bin/zsh”，“传递输入” 设置为 “作为自变量”。接着在脚本框中输入以下命令：
+1. **编写 Shell 脚本**：在 “运行 Shell 脚本” 操作中，确保 “shell” 设置为 “/bin/zsh”，“传递输入” 设置为 “作为自变量”。接着在脚本框中输入以下命令：
 
     ```shell
     open -a "Visual Studio Code" "$@"
     ```
 
-6. **保存快速操作**：点击菜单栏中的 “文件” -> “保存”，为快速操作命名，例如 “Open VSCode”。
-7. **使用快速操作**：现在，当你在 Finder 中右键点击文件或文件夹时，就能在 “Qucik Action” 菜单里看到 “Open VSCode” 选项了。
+2. **保存快速操作**：点击菜单栏中的 “文件” -> “保存”，为快速操作命名，例如 “Open VSCode”。
+3. **使用快速操作**：现在，当你在 Finder 中右键点击文件或文件夹时，就能在 “Qucik Action” 菜单里看到 “Open VSCode” 选项了。
     ![step 2](/assets/imgs/posts/2025-04-16-Add-Visual-Studio-Code-to-the-right-click-menu-on-macOS/OpenVSCode-02.png)
 
 通过以上步骤，你就可以把 Visual Studio Code 添加到 macOS 的右键菜单中，方便快速打开文件或文件夹。

@@ -1,4 +1,12 @@
-# 环境变量文件的比较
+---
+title: Linux 环境变量文件的比较
+description: Linux 不同环境变量文件之间的比较.
+author: lustti
+date: 2020-06-06 11:33:00 +0800
+categories: [Linux, Common]
+tags: [Linux]
+pin: false
+---
 
 > linux不同环境变量文件的比较，如/etc/profile和/etc/environment
 [> 原文](https://www.cnblogs.com/YC-L/p/12602616.html)

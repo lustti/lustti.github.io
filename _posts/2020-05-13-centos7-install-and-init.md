@@ -1,4 +1,12 @@
-# Centos 7 安装以及初步配置
+---
+title: Centos 7 安装以及初步配置
+description: Centos 7 安装以及初步配置笔记整理汇总.
+author: lustti
+date: 2020-05-13 11:33:00 +0800
+categories: [Linux, Centos]
+tags: [Linux, Centos]
+pin: false
+---
 
 ## 系统安装
 系统安装比较简单，主要以下几点需要注意：
@@ -7,7 +15,7 @@
 - 安装内容按需要选择。
 
 ## 常用路径
-一般查找可以用以下几个命令, 详见[查找命令使用详解](search-cmd.md)： 
+一般查找可以用以下几个命令, 详见[查找命令使用详解](/posts/linux-search-cmd/)： 
 - find
 - locate
 - which 方便查询命令
