@@ -214,6 +214,7 @@ exclude:
   - "*.config.js"
   - "package*.json"
   - Makefile
+  - src
 
 jekyll-archives:
   enabled: [categories, tags]
