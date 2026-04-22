@@ -1,12 +1,14 @@
 ---
 title: Git 分支模型规范
-description: 本分支模型主要参考了[ Vincent Driessen 博文 ](https://nvie.com/posts/a-successful-git-branching-model/).
+description: 分支模型的建立方案，便于高效快速的开发.
 author: lustti
 date: 2020-07-27 11:33:00 +0800
 categories: [Tools, Git]
 tags: [Git, Style Guide]
 pin: false
 ---
+
+> 本分支模型主要参考了[ Vincent Driessen 博文 ](https://nvie.com/posts/a-successful-git-branching-model/)
 
 ## 分支模型总览
 
