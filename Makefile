@@ -29,7 +29,7 @@ build:
 
 # Clean cache
 clean:
-	find $(DEST) -mindepth 1 -maxdepth 1 ! -name '.git' ! -name '.gitattributes' -exec rm -rf {} +
+	find $(DEST) -mindepth 1 -maxdepth 1 ! -name '.git' ! -name '.gitattributes' ! -name 'CNAME' -exec rm -rf {} +
 	rm -rf .jekyll-cache
 	rm -rf .jekyll-metadata
 
