@@ -10,6 +10,8 @@
 
 </div>
 
+---
+
 ## Manual
 
 Tutorial
@@ -19,3 +21,13 @@ Tutorial
 
 Showcase
 - [Text and Typography](docs/manual//2019-08-08-text-and-typography.md)
+
+## Makefile
+
+`DEST = _site`
+
+- `install`: Install dependencies (Gemfile)
+- `serve`: Start local preview server (includes drafts)
+- `build`: Build static files to the $(DEST) directory
+- `clean`: Remove build cache and generated files
+- `deploy`: Build and push to production environment
