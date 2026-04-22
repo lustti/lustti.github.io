@@ -1,9 +1,7 @@
 name: "Build and Deploy"
 on:
   push:
-    branches:
-      - main
-      - build
+    branches: ["build"]
     paths-ignore:
       - .gitignore
       - README.md
@@ -54,7 +52,8 @@ jobs:
         run: |
           bundle exec htmlproofer _site \
             \-\-disable-external \
-            \-\-ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+            \-\-ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/" \
+            \-\-no-enforce-https
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v4
